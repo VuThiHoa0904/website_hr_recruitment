@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="hr_job_inherit" model="ir.ui.view">
+            <field name="name">Job View</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                     <field name="image_logo" widget="image" class="oe_avatar" />
+                </xpath>
+            </field>
+        </record>
+
+<!--        <record id="res_partner_inherit_tree" model="ir.ui.view">-->
+<!--            <field name="name">Partner View</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="base.view_partner_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                    <xpath expr="//tree" position="attributes">-->
+<!--                        <attribute name="delete">false</attribute>-->
+<!--                    </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record model='ir.ui.view' id='view_res_partner_filter'>-->
+<!--            <field name='name'>res.partner.select.inherit.base.partner.filter</field>-->
+<!--            <field name='model'>res.partner</field>-->
+<!--            <field name='inherit_id' ref='base.view_res_partner_filter'/>-->
+<!--            <field name='arch' type='xml'>-->
+<!--                 <xpath expr="." position="inside">-->
+<!--                     <filter string="Group customers" name="group_customer_id" context="{'group_by' : 'group_customer_id'}" domain="[]"/>-->
+<!--                     <field name="group_customer_id" filter_domain="[('group_customer_id.name','ilike',self)]"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    
+    </data>
+</odoo>
