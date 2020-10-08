@@ -10,6 +10,33 @@
                 <xpath expr="//div[hasclass('oe_title')]" position="inside">
                      <field name="image_logo" widget="image" class="oe_avatar" />
                 </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+                     <field name="area_id" widget="many2many_tags" />
+                     <field name="work_level_id"/>
+                     <field name="type_of_work_id"/>
+                     <field name="experience_id"/>
+                     <field name="academic_level_id"/>
+                     <field name="wage_id"/>
+                     <field name="gender"/>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="replace">
+<!--                    <label for="description"/>-->
+                    <field name="description"/>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="replace">
+                    <field name="department_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="after">
+                    <br/>
+                    <label for="job_requirement"/>
+                    <field name="job_requirement"/>
+                    <br/>
+                    <label for="vested_interest"/>
+                    <field name="vested_interest"/>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="after">
+                    <field name="date_submit"/>
+                </xpath>
             </field>
         </record>
 

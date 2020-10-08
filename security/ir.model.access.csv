@@ -1,2 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_jobnow_jobnow,jobnow.jobnow,model_jobnow_jobnow,base.group_user,1,1,1,1
+access_jobnow_job_list_admin,jobnow_job_list_admin,model_jobnow_list_job,jobnow_group_admin,1,1,1,1
+
+access_jobnow_work_level_admin,jobnow_work_level_admin,model_jobnow_work_level,jobnow_group_admin,1,1,1,1
+
+access_jobnow_type_of_work_admin,jobnow_type_of_work_admin,model_jobnow_type_of_work,jobnow_group_admin,1,1,1,1
+
+access_jobnow_experience_admin,jobnow_experience_admin,model_jobnow_experience,jobnow_group_admin,1,1,1,1
+
+access_jobnow_academic_level_admin,jobnow_academic_level_admin,model_jobnow_academic_level,jobnow_group_admin,1,1,1,1
+
+access_jobnow_wage_admin,jobnow_wage_admin,model_jobnow_wage,jobnow_group_admin,1,1,1,1

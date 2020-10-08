@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!--        Nhà tuyển dụng chỉ nhìn thấy được công việc do mình tạo-->
+        <record id="hr_recruitment.hr_applicant_comp_rule" model="ir.rule">
+            <field name="name">Nhân viên chỉ nhìn thấy được việc làm do mình tạo</field>
+<!--            id của model-->
+            <field ref="hr_recruitment.model_hr_job" name="model_id"/>
+<!--            domain_force: Điều kiện lọc: ở đây lấy file create_uid được odoo tạo tự động trong bất cứ model nào: kiểm tra id của người tạo bookloan có bằng id của người dùng đang đăng nhập không-->
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+<!--            <field name="global" eval="True"/>-->
+            <!-- You can attach this rule to a specific group, Or make it Global : áp dụng quyền cho nhóm nào -->
+            <field name="groups" eval="[(4, ref('hr_recruitment.group_hr_recruitment_user'))]"/>
+        </record>
+    
+    </data>
+</odoo>
