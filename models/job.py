@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from datetime import date, timedelta
 
 class Job(models.Model):
 
@@ -18,7 +19,7 @@ class Job(models.Model):
         selection=[('nam', 'Nam'),
                    ('nu', 'Nữ'),
                    ('none', 'Không yêu cầu'),],
-        required=False,)
+        required=False, default='none')
     date_submit = fields.Date(
         string='Hạn nộp hồ sơ',
         required=False)
@@ -64,9 +65,28 @@ class Job(models.Model):
         string='Mô tả công việc',
         required=False)
 
+    flash_job = fields.Boolean(string='Flash Job', default=False)
+    job_hurry = fields.Boolean( string='Việc tuyển gấp', required=False)
+    attractive_job = fields.Boolean( string='Việc hấp dẫn', required=False)
+
     @api.depends('address_id')
     def get_logo_company(self):
         for rec in self:
             rec.image_logo = rec.address_id.image_1920
+
+    # @api.depends("date_submit")
+    # def get_flash_job(self):
+    #     current_dt = date.today()
+    #     for rec in self:
+    #         if rec.date_submit:
+    #             end = rec.date_submit
+    #             date_calc = ((end - current_dt).days / 60)
+    #             print("+++===========")
+    #             print(date_calc)
+    #             # Age should be greater than 0
+    #             if date_calc > 0:
+    #                 rec.flash_job = True
+    #             else:
+    #                 rec.flash_job = False
 
 
