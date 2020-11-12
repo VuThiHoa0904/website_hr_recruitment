@@ -56,9 +56,9 @@
                 <xpath expr="//field[@name='partner_mobile']" position="replace">
                     <field name="partner_mobile" invisible="1"/>
                 </xpath>
-<!--                <xpath expr="//field[@name='description']" position="replace">-->
-<!--                    <field name="description" invisible="1"/>-->
-<!--                </xpath>-->
+                <xpath expr="//field[@name='description']" position="replace">
+                    <field name="description" invisible="1"/>
+                </xpath>
             </field>
         </record>
     </data>
