@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_applicant_form_inherit" model="ir.ui.view">
+            <field name="name">hr.applicant.form.inherit</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="after">
+<!--                     <field name="birthday" attrs="{'invisible':[('company_type','=','company')]}"/>-->
+                    <group string="Thông tin CV">
+                        <group>
+                            <field name="fb" string="Facebook" />
+                            <field name="gender" string="Giới tính"/>
+                        </group>
+                        <group>
+                            <field name="date_of_birth"/>
+                            <label for="" name="address_name"><b>Địa chỉ</b></label>
+                            <div class="o_address_format">
+                                <field name="state_id" class="o_address_state" placeholder="Tỉnh/Thành phố"/>
+                                <field name="city_id" placeholder="Quận/Huyện" class="o_address_city"/>
+                                <field name="street2" placeholder="Số nhà, xã..." class="o_address_street"/>
+                            </div>
+                        </group>
+                        <br/>
+                        <label for="" name="career_goals"><b>Mục tiêu nghề nghiệp</b></label>
+                        <field name="career_goals"/>
+                        <label for="" name="education"><b>Học vấn</b></label>
+                        <field name="education"/>
+                        <label for="" name="experience"><b>Kinh nghiệm làm việc</b></label>
+                        <field name="experience"/>
+                        <label for="" name="skill"><b>Các kĩ năng</b></label>
+                        <field name="skill"/>
+                        <label for="" name="prize"><b>Giải thưởng</b></label>
+                        <field name="prize"/>
+                    </group>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_title')]" position="before">
+                    <field name="image" widget='image' class="oe_avatar"/>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="replace">
+                    <field name="department_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='categ_ids']" position="replace">
+                    <field name="categ_ids" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='medium_id']" position="replace">
+                    <field name="medium_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='source_id']" position="replace">
+                    <field name="source_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='email_cc']" position="replace">
+                    <field name="email_cc" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_mobile']" position="replace">
+                    <field name="partner_mobile" invisible="1"/>
+                </xpath>
+<!--                <xpath expr="//field[@name='description']" position="replace">-->
+<!--                    <field name="description" invisible="1"/>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+    </data>
+</odoo>

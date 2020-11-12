@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Slides Frontend Assets">
+            <xpath expr="//link[last()]" position="after">
+<!--                <link rel="stylesheet" type="text/scss" href="/jobnow/static/src/scss/website_frontend_inherit.scss" t-ignore="true"/>-->
+                <link rel="stylesheet" type="text/css" href="/jobnow/static/src/js/slick/slick.css" t-ignore="true"/>
+                <link rel="stylesheet" type="text/css" href="/jobnow/static/src/js/slick/slick-theme.css"/>
+            </xpath>
+            <xpath expr="//script[last()]" position="after">
+<!--                <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+<!--                <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+                <script type="text/javascript" src="/jobnow/static/src/js/slick/slick.min.js"></script>
+                <script type="text/javascript" src="/jobnow/static/src/js/ckeditor.js"></script>
+            </xpath>
+        </template>
+        <template id="hr_recruitment_form_extend" inherit_id="website_hr_recruitment.apply" name="Apply Job Extend">
+            <xpath expr="//div[hasclass('o_website_form_required_custom')]" position="after">
+<!--                <div class="form-group row form-field">-->
+<!--                    <div class="col-lg-3 col-md-4 text-left">-->
+<!--                        <label class="col-form-label" for="description">Giới tính </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-7 col-md-8">-->
+<!--                        <textarea class="form-control o_website_form_input" name="abc"></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <script type="text/javascript">
+<!--                    CKEDITOR.replace("abc");-->
+<!--                    var textarea = document.body.appendChild( document.createElement( 'textarea' ) );-->
+<!--                    CKEDITOR.replace( textarea );-->
+                </script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

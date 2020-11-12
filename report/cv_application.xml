@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="CV_document" name="jobnow ">
+             <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/jobnow/static/src/css/font-awesome.min.css"/>
+                 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+                <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"/>
+                 <style type="text/css">
+                     html, body, div, span, applet, object, iframe,
+                    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+                    a, abbr, acronym, address, big, cite, code,
+                    del, dfn, em, img, ins, kbd, q, s, samp,
+                    small, strike, strong, sub, sup, tt, var,
+                    b, u, i, center,
+                    dl, dt, dd, ol, ul, li,
+                    fieldset, form, label, legend,
+                    table, caption, tbody, tfoot, thead, tr, th, td,
+                    article, aside, canvas, details, embed,
+                    figure, figcaption, footer, header, hgroup,
+                    menu, nav, output, ruby, section, summary,
+                    time, mark, audio, video {
+                        margin: 0;
+                        padding: 0;
+                        border: 0;
+                        font-size: 60%;
+                        font: inherit;
+                        vertical-align: baseline;
+                    }
+                    /* HTML5 display-role reset for older browsers */
+                    article, aside, details, figcaption, figure,
+                    footer, header, hgroup, menu, nav, section {
+                        display: block;
+                    }
+                    body {
+                        line-height: 1.625;
+                        font-size: 15px;
+                        color:#263238;
+                        font-family: robotocondensed,Arial,sans-serif;
+                        -webkit-font-smoothing: antialiased;
+                    }
+                    ol, ul {
+                        list-style: none;
+                    }
+                    blockquote, q {
+                        quotes: none;
+                    }
+                    blockquote:before, blockquote:after,
+                    q:before, q:after {
+                        content: '';
+                        content: none;
+                    }
+                    table {
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                    }
+                    *, *:before, *:after {
+                        box-sizing: border-box;
+                    }
+                    img {
+                        vertical-align: middle;
+                        max-width: 100%;
+                    }
+                    p {
+                        margin: 0 0 10px;
+                    }
+
+                    /* Helper Class */
+                    .flex {
+                        display: flex;
+                        margin-bottom: 10px;
+                    }
+                    .flex .middle {
+                        align-items: center;
+                    }
+                    .flex .flex--1 {
+                        flex: 1;
+                    }
+
+                    /* Global Layout */
+                    .wrapper {
+                        max-width: 1170px;
+                        width: 100%;
+                        height: 141.45%;
+                        margin: auto;
+                    }
+                    .sidebar {
+                        width: 32%;
+                        height: 141.45%;
+                        background: #37474f;
+                        color: #fff;
+                        float: left;
+                    }
+                    .content {
+                        width: 68%;
+                        margin-left: 38%;
+                        padding-top: 40px;
+                        height: auto ;
+                    }
+
+                    /* Avatar */
+                    .avatar {
+                        text-align: center;
+                        padding: 60px 0;
+                        background:#263238;
+                    }
+                    .avatar img {
+                        border-radius: 50%;
+
+                    }
+                    .avatar h1 {
+                        font-size: 25px;
+                        text-transform: uppercase;
+                        margin: 25px 0 0;
+                        line-height: 1;
+                    }
+                    .avatar h4 {
+                        font-size: 18px;
+                    }
+
+                    /* Module */
+                    .sidebar .module {
+                        padding: 0 30px;
+                        margin-top: 50px;
+                    }
+                    .sidebar .module:last-child {
+                        margin-bottom: 50px;
+                    }
+                    .module__title {
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+                    .module__meta {
+                        font-size: 14px;
+                        color: #90a4ae;
+                        margin-bottom: 20px;
+                    }
+                    .module__meta i {
+                        margin-right: 10px;
+                    }
+                    .module__meta span {
+                        margin-right: 20px;
+                    }
+                    .module__title .circle {
+                        margin-right: 10px;
+                    }
+                    .circle {
+                        font-size: 14px;
+                        color: #fff;
+                        background:#263238;
+                        border-radius: 50%;
+                        text-align: center;
+                        margin-right: 20px;
+                    }
+                    .circle.circle--large {
+                        width: 55px;
+                        height: 55px;
+                        line-height: 60px;
+                    }
+                    .circle.circle--medium {
+                        width: 36px;
+                        height: 36px;
+                        line-height: 42px;
+                    }
+                    .circle.circle--small {
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                    .circle.circle--white {
+                        background: #fff;
+                        color:#263238;
+                    }
+
+                    /* Progress bar */
+                    .progress-bar,
+                    .progress-bar span {
+                        height: 6px;
+                        background: #fff;
+                        border-radius: 6px;
+                        display: block;
+                    }
+                    .progress-bar span {
+                        background:#263238;
+                    }
+                    .module--progress li {
+                        margin-bottom: 20px;
+                    }
+
+                    /* Section */
+                    .section:not(.last-child) {
+                        margin-bottom: 25px;
+                        width: auto;
+                    }
+                    .section__title {
+                        font-size: 25px;
+                        text-transform: uppercase;
+                        margin: 0 0 10px;
+                    }
+                    .section__content {
+                        padding-left: 0px;
+                        width: auto;
+                    }
+                    .content .module:not(:first-child) {
+                        margin-top: 25px;
+                    }
+                    .content .module__title {
+                        margin-bottom: 0;
+                    }
+
+                    /* Language */
+                    .lang {
+                        justify-content: space-between;
+                    }
+                    .lang__content {
+                        float: right;
+                        text-align: center;
+                    }
+                    .lang__content h4 {
+                        text-transform: uppercase;
+                        margin-top: 15px;
+                    }
+                 </style>
+            </xpath>
+            <body>
+            <div class="wrapper flex">
+                <div class="sidebar">
+                    <div class="avatar">
+                        <img t-attf-src="data:image/*;base64,{{doc.image}}" width="180" height="180" alt=""/>
+                        <h1 class="name"><span t-field="doc.partner_name"/></h1>
+                        <h4 class="job"><span t-field="doc.job_id.name"/></h4>
+                    </div><!-- .avatar -->
+                    <div class="module">
+<!--                        <h3 class="module__title">-->
+<!--                            <i class="fa fa-address-book-o circle circle&#45;&#45;medium"></i>-->
+<!--                            <span style="font-size: 20px;">Thông tin cá nhân</span>-->
+
+
+<!--                        </h3>-->
+                        <div class="module__content">
+                            <ul>
+                                <li class="flex">
+                                    <i class="fa fa-calendar circle circle--small circle--white"></i>
+                                    <span t-field="doc.date_of_birth"/>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-venus-mars circle circle--small circle--white"></i>
+                                    <span t-field="doc.gender"/>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-map-marker circle circle--small circle--white"></i>
+                                    <span><span t-field="doc.city_id.name"/>, <span t-field="doc.state_id.name"/></span>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-globe circle circle--small circle--white"></i>
+                                    <span t-field="doc.email_from"/>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-mobile circle circle--small circle--white"></i>
+                                    <span t-field="doc.partner_phone"/>
+                                </li>
+                                <li class="flex">
+                                    <i class="fa fa-facebook circle circle--small circle--white"></i>
+                                    <span t-field="doc.fb"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- End .module #2 -->
+                    <div class="module">
+                        <h3 class="module__title">
+                            <i class="fa fa-lightbulb-o circle circle--medium"></i>
+                            <span style="font-size: 20px;">Mục tiêu</span>
+                        </h3>
+                        <div class="module__content">
+                            <p style="line-height: 2.5;">
+                                <span t-field="doc.career_goals"/>
+                            </p>
+                        </div>
+                    </div><!-- End .module #1 -->
+
+<!--                    <div class="module module&#45;&#45;progress">-->
+<!--                        <h3 class="module__title">-->
+<!--                            <i class="fa fa-binoculars circle circle&#45;&#45;medium"></i>-->
+<!--                            <span style="font-size: 20px;">Kĩ năng</span>-->
+<!--                        </h3>-->
+<!--                        <div class="module__content">-->
+<!--                            <p>-->
+<!--                                <span t-raw="doc.skill"/>-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>&lt;!&ndash; End .module #3 &ndash;&gt;-->
+<!--                    <div class="module">-->
+<!--                        <h3 class="module__title">-->
+<!--                            <i class="fa fa-trophy circle circle&#45;&#45;medium"></i>-->
+<!--                            <span style="font-size: 20px;">Giải thưởng</span>-->
+<!--                        </h3>-->
+<!--                        <div class="module__content">-->
+<!--                            <p>-->
+<!--                                <span t-raw="doc.prize"/>-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div> &lt;!&ndash; End .module #4 &ndash;&gt;-->
+                </div><!-- End .sidebar -->
+                <div class="content">
+                    <div class="section">
+                        <h2 class="section__title">
+                            <i class="fa fa-briefcase circle circle--large"></i>
+                            <span>Kinh nghiệm làm việc</span>
+                        </h2>
+                        <div class="section__content">
+                            <div class="module">
+                                <div class="module__meta">
+                                    <span><i class="fa fa-calendar"></i>T8/2018 - T10/2020
+                                    </span>
+                                </div>
+                                <div class="module__content">
+                                    <p style="line-height: 2.5;">
+                                        <span t-field="doc.experience"/>
+                                    </p>
+                                </div>
+                            </div><!-- End .module #4 -->
+                        </div><!-- End .section__content -->
+                    </div><!-- End .section #1 -->
+
+                    <div class="section">
+                        <h2 class="section__title">
+                            <i class="fa fa-graduation-cap circle circle--large"></i>
+                            <span>Học vấn</span>
+                        </h2>
+                        <div class="section__content">
+                            <div class="module">
+                                <div class="module__meta">
+                                    <span><i class="fa fa-calendar"></i>T8/2016 - T6/2021
+                                    </span>
+                                </div>
+                                <div class="module__content">
+                                    <p style="line-height: 2.5;">
+                                        <span t-field="doc.education"/>
+                                    </p>
+                                </div>
+                            </div><!-- End .module #8 -->
+                        </div><!-- End .section__content -->
+                    </div><!-- End .section #2 -->
+                    <div class="section">
+                        <h2 class="section__title">
+                            <i class="fa fa-binoculars circle circle--large"></i>
+                            <span>Các kĩ năng</span>
+                        </h2>
+                        <div class="section__content">
+                            <div class="module">
+                                <div class="module__content">
+                                    <p style="line-height: 2.5;">
+                                        <span t-field="doc.skill"/>
+                                    </p>
+                                </div>
+                            </div><!-- End .module #8 -->
+                        </div><!-- End .section__content -->
+                    </div><!-- End .section #2 -->
+                    <div class="section">
+                        <h3 class="section__title">
+                            <i class="fa fa-trophy circle circle--large"></i>
+                            <span>Giải thưởng</span>
+                        </h3>
+                        <div class="section__content">
+                            <div class="module">
+                                <div class="module__content">
+                                    <p style="line-height: 2.5;">
+                                        <span t-field="doc.prize"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End .module #4 -->
+
+<!--                    <div class="section">-->
+<!--                        <h2 class="section__title">-->
+<!--                            <i class="fa fa-briefcase circle circle&#45;&#45;large"></i>-->
+<!--                            <span>Work Experience</span>-->
+<!--                        </h2>-->
+<!--                        <div class="section__content">-->
+<!--                            <div class="lang flex">-->
+<!--                                <div class="lang__content">-->
+<!--                                    <img src="/jobnow/static/src/img/english.png" width="133" height="89" alt="English"/>-->
+<!--                                    <h4>English</h4>-->
+<!--                                    <div class="star">-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="lang__content">-->
+<!--                                    <img src="/jobnow/static/src/img/bangali.png" width="133" height="89" alt="Bangali"/>-->
+<!--                                    <h4>Bangali</h4>-->
+<!--                                    <div class="star">-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="lang__content">-->
+<!--                                    <img src="/jobnow/static/src/img/germany.png" width="133" height="89" alt="Germany"/>-->
+<!--                                    <h4>Germany</h4>-->
+<!--                                    <div class="star">-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                        <i class="fa fa-star"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>&lt;!&ndash; End .section__content &ndash;&gt;-->
+<!--                    </div>&lt;!&ndash; End .section #3 &ndash;&gt;-->
+                </div><!-- End .content -->
+            </div><!-- End .wrapper -->
+            <div style="
+                  text-align: center;
+                  padding: 1rem;
+                  margin-bottom: 5px;
+                  margin-right: 50px;">
+                <span style="float: right; font-size: 22px; font-weight:300; color: #b5b2b2;">kennatech.vn</span>
+                <i class="fa fa-copyright" style="float: right; margin-right:5px; font-size: 22px; margin-top: 8px; color: #b5b2b2;"></i>
+            </div>
+            </body>
+        </template>
+<!--        <template id="cv_footer" >-->
+<!--            <xpath expr="//div[@class='footer']" position="replace">-->
+<!--                <div class="footer">-->
+<!--                    <p style="float: right; font-family:roboto; font-size: 30px; font-weight:300;">kennatech.vn</p>-->
+<!--                    <i class="fa fa-copyright" aria-hidden="false" style="float: right; margin-right:5px; font-size: 30px;"></i>-->
+<!--                </div>-->
+<!--            </xpath>-->
+<!--        </template>-->
+        <template id="report_CV_jobnow_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="jobnow.CV_document"/>
+                </t>
+<!--                <t t-call="report.external_layout_footer"/>-->
+            </t>
+        </template>
+        <report
+                id="report_CV_jobnow"
+                model="hr.applicant"
+                string="File CV"
+                name="jobnow.report_CV_jobnow_view"
+                file="jobnow.report_CV_jobnow_view"
+                report_type="qweb-pdf"/>
+    </data>
+</odoo>

@@ -1,20 +1,12 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+
+import json
 from odoo.addons.portal.controllers.web import Home
 from odoo.http import request
 
-class Website(Home):
-    # @http.route('/jobnow/jobnow/', auth='public')
-    # def index(self, **kw):
-    #     return "Hello, world"
-    #
-    # @http.route('/jobnow/jobnow/objects/', auth='public')
-    # def list(self, **kw):
-    #     return http.request.render('jobnow.listing', {
-    #         'root': '/jobnow/jobnow',
-    #         'objects': http.request.env['jobnow.jobnow'].search([]),
-    #     })
-    #
+class Website(http.Controller):
+
     def sitemap_jobs(env, rule, qs):
         if not qs or qs.lower() in '/jobs':
             yield {'loc': '/jobs'}
@@ -40,7 +32,7 @@ class Website(Home):
         job_ids = Jobs.search(domain, order="is_published desc, no_of_recruitment desc").ids
         # Browse jobs as superuser, because address is restricted
         jobs = Jobs.sudo().browse(job_ids)
-
+        # json_job = json.dumps(jobs)
         # Default search by user country
         if not (country or department or office_id or kwargs.get('all_countries')):
             country_code = request.session['geoip'].get('country_code')
@@ -79,10 +71,11 @@ class Website(Home):
             'country_id': country,
             'department_id': department,
             'office_id': office_id,
+            # 'json_job': json_job,
         })
 
     @http.route('''/jobs/detail/<model("hr.job", "[('website_id', 'in', (False, current_website_id))]"):job>''',
-                type='http', auth="public", website=True)
+                type='http', auth="public", website=True, csrf=False)
     def jobs_detail(self, job, **kwargs):
         jobs = http.request.env['hr.job'].sudo().search([['area_id', 'in', job.area_id.id]])
         if not job.can_access_from_current_website():
@@ -93,6 +86,30 @@ class Website(Home):
             'jobs': jobs,
             'main_object': job,
         })
+
+    # @http.route('/jobs/export/submit', type='http', auth="public", methods=['GET'], website=True, csrf=False)
+    # def export_html(self, **kwargs):
+    #     # if kwargs.get('attachment', False):
+    #     # Attachments = request.env['ir.attachment']
+    #     partner_name = kwargs.get('partner_name')
+    #     facebook = kwargs.get('facebook')
+    #     # gender = kwargs.get('gender')
+    #     # date_of_birth = kwargs.get('date_of_birth')
+    #     # state_id = kwargs.get('state_id')
+    #     # city_id = kwargs.get('city_id')
+    #     # street2 = kwargs.get('street2')
+    #     # degree_id = kwargs.get('degree_id')
+    #     # career_goals = kwargs.get('career_goals')
+    #     # experience = kwargs.get('experience')
+    #     education = kwargs.get('education')
+    #     # skill = kwargs.get('skill')
+    #     # prize = kwargs.get('prize')
+    #     print("+++++++++++++++++++++++")
+    #     print(partner_name)
+    #
+    #     # return request.redirect("website.xem-truoc-cv", {
+    #     #     'education': education,
+    #     # })
 
     @http.route('/jobs/search', type='http', auth="public", website=True)
     def jobs_search(self, **kwargs):
@@ -107,6 +124,27 @@ class Website(Home):
             # 'main_object': job,
         })
 
+    @http.route('''/jobs/apply/<model("hr.job", "[('website_id', 'in', (False, current_website_id))]"):job>''', type='http', auth="public", website=True)
+    def jobs_apply(self, job, **kwargs):
+        if not job.can_access_from_current_website():
+            raise NotFound()
+        error = {}
+        default = {}
+        cities = request.env['res.city'].sudo().search([])
+        states = request.env['res.country.state'].sudo().search([])
+        degrees = request.env['hr.recruitment.degree'].sudo().search([])
+        if 'website_hr_recruitment_error' in request.session:
+            error = request.session.pop('website_hr_recruitment_error')
+            default = request.session.pop('website_hr_recruitment_default')
+        return request.render("website_hr_recruitment.apply", {
+            'job': job,
+            'error': error,
+            'default': default,
+            'cities': cities,
+            'states': states,
+            'degrees': degrees,
+        })
+
     @http.route('/', type='http', auth="public", website=True)
     def index(self, **kw):
         jobs = http.request.env['hr.job']
@@ -115,16 +153,35 @@ class Website(Home):
             'jobs': jobs.sudo().search([]),
             'companys': companys.sudo().search([])
         })
-        # homepage = request.website.homepage_id
-        # if homepage and (homepage.sudo().is_visible or request.env.user.has_group('base.group_user')) and homepage.url != '/':
-        #     return request.env['ir.http'].reroute(homepage.url)
-        #
-        # website_page = request.env['ir.http']._serve_page()
-        # if website_page:
-        #     return website_page
-        # else:
-        #     top_menu = request.website.menu_id
-        #     first_menu = top_menu and top_menu.child_id and top_menu.child_id.filtered(lambda menu: menu.is_visible)
-        #     if first_menu and first_menu[0].url not in ('/', '', '#') and (not (first_menu[0].url.startswith(('/?', '/#', ' ')))):
-        #         return request.redirect(first_menu[0].url)
-        # raise request.not_found()
+
+    @http.route('/job/submit', type='http', auth="user", website=True, csrf=True)
+    def submit_form(self, **post):
+        if post.get('attachment', False):
+            Attachments = request.env['ir.attachment']
+            name = post.get('attachment').filename
+            file = post.get('attachment')
+            customer_id = post.get('id')
+            attachment = file.read()
+            list_id = request.env['ir.attachment'].sudo().search_read([], ['res_id'])
+            if customer_id:
+                if attachment:
+                    attachment_id = Attachments.sudo().create({
+                        'name': name,
+                        'datas_fname':name,
+                        'res_name': name,
+                        'type': 'binary',
+                        'res_model': 'dgis.customer',
+                        'res_field': 'file_phan_tich',
+                        'res_id': customer_id,
+                        'datas': base64.b64encode(attachment),
+                    })
+
+                    value = {
+                        'file_phan_tich': attachment_id,
+                    }
+                    rec = request.env['dgis.customer'].sudo().search([['id', '=', customer_id]])
+                    rec.update({'state': 'done'})
+                    return request.render("dgis.tmp_customer_form_success", value)
+                else:
+                    raise exceptions.ValidationError(u"Bạn chưa file phân tích!")
+

@@ -31,6 +31,9 @@
         'security/group_user.xml',
         'security/ir.model.access.csv',
         'security/record_rule.xml',
+        'browser/add_lib_fontend.xml',
+        'views/hr_applicant_view.xml',
+        'report/cv_application.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
