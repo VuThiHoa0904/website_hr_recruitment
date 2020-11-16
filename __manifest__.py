@@ -33,6 +33,7 @@
         'security/record_rule.xml',
         'browser/add_lib_fontend.xml',
         'views/hr_applicant_view.xml',
+        'views/res_partner_inherit.xml',
         'report/cv_application.xml',
     ],
     # only loaded in demonstration mode

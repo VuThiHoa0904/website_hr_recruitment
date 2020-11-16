@@ -117,3 +117,9 @@ class Partner(models.Model):
         return base64.b64encode(open(image_path, 'rb').read())
 
     image_1920 = fields.Binary(default=_default_image)
+    city_id = fields.Many2one(
+        comodel_name='res.city',
+        string='Quận/Huyện', required=False, domain="[('state_id', '=?', state_id)]", ondelete='restrict')
+    state_id = fields.Many2one(
+        comodel_name='res.country.state',
+        string='Tỉnh/Thành phố', required=False)

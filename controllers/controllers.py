@@ -77,7 +77,24 @@ class Website(http.Controller):
     @http.route('''/jobs/detail/<model("hr.job", "[('website_id', 'in', (False, current_website_id))]"):job>''',
                 type='http', auth="public", website=True, csrf=False)
     def jobs_detail(self, job, **kwargs):
+
         jobs = http.request.env['hr.job'].sudo().search([['area_id', 'in', job.area_id.id]])
+        w = http.request.env['jobnow.wage'].sudo().search([['id', '=', job.wage_id.id]])
+        lj = http.request.env['jobnow.list_job'].sudo().search([['id', '=', job.area_id.id]])
+        wl = http.request.env['jobnow.work_level'].sudo().search([['id', '=', job.work_level_id.id]])
+        tow = http.request.env['jobnow.type_of_work'].sudo().search([['id', '=', job.type_of_work_id.id]])
+        e = http.request.env['jobnow.experience'].sudo().search([['id', '=', job.experience_id.id]])
+        al = http.request.env['jobnow.academic_level'].sudo().search([['id', '=', job.academic_level_id.id]])
+        a = http.request.env['res.partner'].sudo().search([['id', '=', job.address_id.id]])
+        print("======================")
+        print(w.name)
+        print(lj.name)
+        print(wl.name)
+        print(tow.name)
+        print(e.name)
+        print(al.name)
+        print(a.name)
+        print(a.image_1920)
         if not job.can_access_from_current_website():
             raise NotFound()
 

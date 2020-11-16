@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Slides Frontend Assets">
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Slides_Frontend assets">
             <xpath expr="//link[last()]" position="after">
 <!--                <link rel="stylesheet" type="text/scss" href="/jobnow/static/src/scss/website_frontend_inherit.scss" t-ignore="true"/>-->
                 <link rel="stylesheet" type="text/css" href="/jobnow/static/src/js/slick/slick.css" t-ignore="true"/>
@@ -10,6 +10,7 @@
             <xpath expr="//script[last()]" position="after">
 <!--                <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
 <!--                <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+<!--                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
                 <script type="text/javascript" src="/jobnow/static/src/js/slick/slick.min.js"></script>
                 <script type="text/javascript" src="/jobnow/static/src/js/ckeditor.js"></script>
             </xpath>
