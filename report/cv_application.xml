@@ -254,15 +254,15 @@
                                     <i class="fa fa-map-marker circle circle--small circle--white"></i>
                                     <span><span t-field="doc.city_id.name"/>, <span t-field="doc.state_id.name"/></span>
                                 </li>
-                                <li class="flex">
+                                <li class="flex" groups="jobnow.jobnow_group_admin">
                                     <i class="fa fa-globe circle circle--small circle--white"></i>
-                                    <span t-field="doc.email_from"/>
+                                    <span t-field="doc.email_from" />
                                 </li>
-                                <li class="flex">
+                                <li class="flex" groups="jobnow.jobnow_group_admin">
                                     <i class="fa fa-mobile circle circle--small circle--white"></i>
                                     <span t-field="doc.partner_phone"/>
                                 </li>
-                                <li class="flex">
+                                <li class="flex" groups="jobnow.jobnow_group_admin">
                                     <i class="fa fa-facebook circle circle--small circle--white"></i>
                                     <span t-field="doc.fb"/>
                                 </li>

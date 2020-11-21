@@ -21,7 +21,8 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base',
-                'website_hr_recruitment'],
+                'website_hr_recruitment',
+                'website'],
 
     # always loaded
     'data': [
@@ -30,11 +31,11 @@
         'views/job_inherit.xml',
         'security/group_user.xml',
         'security/ir.model.access.csv',
-        'security/record_rule.xml',
-        'browser/add_lib_fontend.xml',
+        # 'security/record_rule.xml',
         'views/hr_applicant_view.xml',
         'views/res_partner_inherit.xml',
         'report/cv_application.xml',
+        'browser/add_lib_fontend.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

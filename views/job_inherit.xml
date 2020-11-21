@@ -38,9 +38,9 @@
                     <field name="date_submit"/>
                 </xpath>
                 <xpath expr="//field[@name='address_id']" position="after">
-                    <field name="flash_job"/>
-                    <field name="job_hurry"/>
-                    <field name="attractive_job"/>
+                    <field name="flash_job" groups="jobnow.jobnow_group_admin"/>
+                    <field name="job_hurry" groups="jobnow.jobnow_group_admin"/>
+                    <field name="attractive_job" groups="jobnow.jobnow_group_admin"/>
                 </xpath>
             </field>
         </record>
