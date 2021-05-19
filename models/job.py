@@ -24,32 +24,32 @@ class Job(models.Model):
         string='Hạn nộp hồ sơ',
         required=False)
     area_id = fields.Many2many(
-        comodel_name='jobnow.list_job',
+        comodel_name='hr.list_job',
         string='Lĩnh vực',
         required=False)
 
     work_level_id = fields.Many2one(
-        comodel_name='jobnow.work_level',
+        comodel_name='hr.work_level',
         string='Yêu cầu cấp bậc',
         required=False)
 
     type_of_work_id = fields.Many2one(
-        comodel_name='jobnow.type_of_work',
+        comodel_name='hr.type_of_work',
         string='Loại hình công việc',
         required=False)
 
     experience_id = fields.Many2one(
-        comodel_name='jobnow.experience',
+        comodel_name='hr.experience',
         string='Yêu cầu kinh nghiệm',
         required=False)
 
     academic_level_id = fields.Many2one(
-        comodel_name='jobnow.academic_level',
+        comodel_name='hr.academic_level',
         string='Yêu cầu trình độ',
         required=False)
 
     wage_id = fields.Many2one(
-        comodel_name='jobnow.wage',
+        comodel_name='hr.wage',
         string='Mức lương',
         required=False)
 

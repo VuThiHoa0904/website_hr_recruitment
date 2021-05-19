@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "jobnow",
+    'name': "Website tuyển dụng",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -22,7 +22,11 @@
     # any module necessary for this one to work correctly
     'depends': ['base',
                 'website_hr_recruitment',
-                'website'],
+                'website',
+                'website_partner',
+                'hr_recruitment',
+                'website_mail',
+                'website_form'],
 
     # always loaded
     'data': [
@@ -36,6 +40,11 @@
         'views/res_partner_inherit.xml',
         'report/cv_application.xml',
         'browser/add_lib_fontend.xml',
+
+        'data/config_data.xml',
+        'views/website_hr_recruitment_templates.xml',
+        'views/hr_recruitment_views.xml',
+        'views/hr_job_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

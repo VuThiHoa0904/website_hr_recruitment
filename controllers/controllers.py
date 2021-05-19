@@ -74,6 +74,14 @@ class Website(http.Controller):
             # 'json_job': json_job,
         })
 
+    @http.route('/jobs/add', type='http', auth="user", website=True)
+    def jobs_add(self, **kwargs):
+        # avoid branding of website_description by setting rendering_bundle in context
+        job = request.env['hr.job'].with_context(rendering_bundle=True).create({
+            'name': _('Job Title'),
+        })
+        return request.redirect("/jobs/detail/%s?enable_editor=1" % slug(job))
+
     @http.route('''/jobs/detail/<model("hr.job", "[('website_id', 'in', (False, current_website_id))]"):job>''',
                 type='http', auth="public", website=True, csrf=False)
     def jobs_detail(self, job, **kwargs):
