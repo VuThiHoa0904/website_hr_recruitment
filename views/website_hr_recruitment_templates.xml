@@ -1,561 +1,2331 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<template id="index" name="Jobs">
-    <t t-call="website.layout">
-        <div id="wrap">
-            <div class="oe_structure">
-                <section class="mb16">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 text-center mb16">
-                                <h2>Our Job Offers</h2>
-                                <h3 class="text-muted">Join us and help disrupt the enterprise market!</h3>
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <p>
-                                    Join us, we offer you an extraordinary chance to learn, to
-                                    develop and to be part of an exciting experience and
-                                    team.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+    <template id="index" name="Jobs">
+        <t t-call="website.layout">
+            <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/style_II.css"/>
+            <body>
+                <div id="wrap">
+                    <!--            <div class="oe_structure">-->
+                    <!--                <section class="mb16">-->
+                    <!--                    <div class="container">-->
+                    <!--                        <div class="row">-->
+                    <!--                            <div class="col-lg-12 text-center mb16">-->
+                    <!--                                <h2>Our Job Offers</h2>-->
+                    <!--                                <h3 class="text-muted">Join us and help disrupt the enterprise market!</h3>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="col-lg-12 text-center">-->
+                    <!--                                <p>-->
+                    <!--                                    Join us, we offer you an extraordinary chance to learn, to-->
+                    <!--                                    develop and to be part of an exciting experience and-->
+                    <!--                                    team.-->
+                    <!--                                </p>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </section>-->
+                    <!--            </div>-->
+                    <!--            <div class="container oe_website_jobs">-->
+                    <!--                <div class="row">-->
+                    <!--                    <div class="d-none" id="jobs_grid_left">-->
 
-            <div class="container oe_website_jobs">
-                <div class="row">
-                    <div class="d-none" id="jobs_grid_left">
+                    <!--                    </div>-->
+                    <!--                    <div class="col-lg-12" id="jobs_grid">-->
+                    <!--                        <div t-if="not jobs">-->
+                    <!--                            <div class="text-center text-muted">-->
+                    <!--                                <h3 class="css_editable_hidden"><a t-attf-href="/contactus">Contact us</a> for job opportunities.</h3>-->
+                    <!--                                <h4 groups="hr_recruitment.group_hr_recruitment_manager">-->
+                    <!--                                    Create new job pages from the <strong><i>+New</i></strong> top-right button.-->
+                    <!--                                </h4>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <ul class="list-unstyled" t-if="jobs">-->
+                    <!--                            <li t-foreach="jobs" t-as="job" t-attf-class="media#{' mt-3' if job_index else ''}">-->
+                    <!--                                <div class="media-body" t-att-data-publish="job.website_published and 'on' or 'off'">-->
+                    <!--                                    <h3>-->
+                    <!--                                        <a t-attf-href="/jobs/detail/#{ slug(job) }">-->
+                    <!--                                            <span t-field="job.name"/>-->
+                    <!--                                        </a>-->
+                    <!--                                        <small t-if="job.no_of_recruitment &gt; 1">-->
+                    <!--                                            <t t-esc="job.no_of_recruitment"/> open positions-->
+                    <!--                                        </small>-->
+                    <!--                                    </h3>-->
 
-                    </div>
-                    <div class="col-lg-12" id="jobs_grid">
-                        <div t-if="not jobs">
-                            <div class="text-center text-muted">
-                                <h3 class="css_editable_hidden"><a t-attf-href="/contactus">Contact us</a> for job opportunities.</h3>
-                                <h4 groups="hr_recruitment.group_hr_recruitment_manager">
-                                    Create new job pages from the <strong><i>+New</i></strong> top-right button.
-                                </h4>
-                            </div>
-                        </div>
-                        <ul class="list-unstyled" t-if="jobs">
-                            <li t-foreach="jobs" t-as="job" t-attf-class="media#{' mt-3' if job_index else ''}">
-                                <div class="media-body" t-att-data-publish="job.website_published and 'on' or 'off'">
-                                    <h3>
-                                        <a t-attf-href="/jobs/detail/#{ slug(job) }">
-                                            <span t-field="job.name"/>
-                                        </a>
-                                        <small t-if="job.no_of_recruitment &gt; 1">
-                                            <t t-esc="job.no_of_recruitment"/> open positions
-                                        </small>
-                                    </h3>
+                    <!--                                    <span t-field="job.address_id" t-options='{-->
+                    <!--                                        "widget": "contact",-->
+                    <!--                                        "fields": ["address"],-->
+                    <!--                                        "no_tag_br": True-->
+                    <!--                                        }'/>-->
+                    <!--                                    <span t-if="not job.website_published" class="badge badge-danger">unpublished</span>-->
+                    <!--                                    <div class="text-muted">-->
+                    <!--                                        <i class="fa fa-clock-o" title="Publication date" role="img" aria-label="Publication date"/> <span t-field="job.write_date"/>-->
+                    <!--                                    </div>-->
+                    <!--                                </div>-->
+                    <!--                            </li>-->
+                    <!--                        </ul>-->
+                    <!--                    </div>-->
+                    <!--                </div>-->
+                    <!--            </div>-->
 
-                                    <span t-field="job.address_id" t-options='{
-                                        "widget": "contact",
-                                        "fields": ["address"],
-                                        "no_tag_br": True
-                                        }'/>
-                                    <span t-if="not job.website_published" class="badge badge-danger">unpublished</span>
-                                    <div class="text-muted">
-                                        <i class="fa fa-clock-o" title="Publication date" role="img" aria-label="Publication date"/> <span t-field="job.write_date"/>
+                    <!-- preloader Start -->
+                    <!--        <div id="preloader">-->
+                    <!--            <div id="status">-->
+                    <!--                <img src="/website_hr_recruitment/static/src/images/header/loadinganimation.gif" id=-->
+                    <!--                        "preloader_image" alt="loader"/>-->
+                    <!--            </div>-->
+                    <!--        </div>-->
+                    <!-- Top Scroll End -->
+                    <!-- Header Wrapper Start -->
+                    <!-- Header Wrapper End -->
+                    <!-- Header Wrapper End -->
+                    <div class="jp_bottom_footer_Wrapper_header_img_wrapper">
+                        <div class="jp_slide_img_overlay"></div>
+                        <div class="jp_banner_heading_cont_wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="jp_job_heading_wrapper">
+                                            <div class="jp_job_heading">
+                                                <h1>
+                                                    <span>3,000+</span>
+                                                    Browse Jobs
+                                                </h1>
+                                                <p>Find Jobs, Employment &amp; Career Opportunities</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="jp_header_form_wrapper">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <input type=
+                                                               "text" placeholder=
+                                                               "Keyword e.g. (Job Title, Description, Tags)"/>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="jp_form_location_wrapper">
+                                                    <select>
+                                                        <option>Select Location</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="jp_form_exper_wrapper">
+                                                    <select>
+                                                        <option>Experience</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                <div class="jp_form_btn_wrapper">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">Search</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="jp_banner_main_jobs_wrapper">
+                                            <div class="jp_banner_main_jobs">
+                                                <ul>
+                                                    <li>Trending Keywords :</li>
+                                                    <li>
+                                                        <a href="#">ui designer,</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">developer,</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">senior</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">it company,</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">design,</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">call center</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Header W rapper End -->
+                    <!-- jp listing sidebar Wrapper Start -->
+                    <div class="jp_listing_sidebar_main_wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="jp_listing_heading_wrapper">
+                                        <h2>We found <span>357</span> Matches for you.
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div class=
+                                             "col-lg-3 col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="jp_rightside_job_categories_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Jobs by Category</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c1" name="cb"/>
+                                                                    <label for=
+                                                                                   "c1">Graphic Designer
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Jobs by Location</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c9" name="cb"/>
+                                                                    <label for="c9">Jobs
+                                                                        in Delhi
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Your Skill’s</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c17" name="cb"/>
+                                                                    <label for=
+                                                                                   "c17">Javascript
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Salary</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c25" name="cb"/>
+                                                                    <label for=
+                                                                                   "c25">$1k - 2k
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Types</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c33" name="cb"/>
+                                                                    <label for=
+                                                                                   "c33">Types
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="jp_add_resume_wrapper jp_job_location_wrapper">
+                                                <div class="jp_add_resume_img_overlay"></div>
+                                                <div class="jp_add_resume_cont">
+                                                    <img src=
+                                                                 "/website_hr_recruitment/static/src/images/content/resume_logo.png" alt="logo"/>
+                                                    <h4>Get Best Matched Jobs On your Email. Add Resume NOW!</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">&#160;ADD RESUME</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="jp_listing_tabs_wrapper">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="gc_causes_select_box_wrapper">
+                                                        <div class="gc_causes_select_box">
+                                                            <select>
+                                                                <option>Sort Default</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                    <div class="gc_causes_view_tabs_wrapper">
+                                                        <div class="gc_causes_view_tabs">
+                                                            <ul class="nav nav-pills">
+                                                                <li class="active">
+                                                                    <a data-toggle="pill" href="#grid"></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-toggle="pill" href="#list"></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                    <div class=
+                                                                 "gc_causes_search_box_wrapper gc_causes_search_box_wrapper2">
+                                                        <div class="gc_causes_search_box">
+                                                            <p>You're Watching &#160;<span>01 to 20</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="tab-content">
+                                                <div id="grid" class="tab-pane fade in active">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class=
+                                                                         "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                                <div class=
+                                                                             "jp_job_post_main_wrapper jp_job_post_grid_main_wrapper">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="jp_job_post_side_img">
+                                                                                <img src=
+                                                                                             "/website_hr_recruitment/static/src/images/content/job_post_img1.jpg"
+                                                                                     alt="post_img"/>
+                                                                            </div>
+                                                                            <div class="jp_job_post_right_cont jp_job_post_grid_right_cont">
+                                                                                <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                                <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                                <ul>
+                                                                                    <li>&#160; $12K - 15k P.A.</li>
+                                                                                    <li>&#160; Caliphonia, PO 455001
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class=
+                                                                                         "jp_job_post_right_btn_wrapper jp_job_post_grid_right_btn_wrapper">
+                                                                                <ul>
+                                                                                    <li>
+                                                                                        <a href="#"></a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="#">Part Time</a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="#">Apply</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="jp_job_post_keyword_wrapper">
+                                                                    <ul>
+                                                                        <li>Keywords :</li>
+                                                                        <li>
+                                                                            <a href="#">ui designer,</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">developer,</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+                                                            <div class="pager_wrapper gc_blog_pagination">
+                                                                <ul class="pagination">
+                                                                    <li>
+                                                                        <a href="#">Priv.</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">1</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">2</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">3</a>
+                                                                    </li>
+                                                                    <li class="hidden-xs">
+                                                                        <a href="#">4</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">Next</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="list" class="tab-pane fade">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class=
+                                                                         "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                                <div class="jp_job_post_main_wrapper">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                            <div class="jp_job_post_side_img">
+                                                                                <img src=
+                                                                                             "/website_hr_recruitment/static/src/images/content/job_post_img5.jpg"
+                                                                                     alt="post_img"/>
+                                                                            </div>
+                                                                            <div class="jp_job_post_right_cont">
+                                                                                <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                                <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                                <ul>
+                                                                                    <li>&#160; $12K - 15k P.A.</li>
+                                                                                    <li>&#160; Caliphonia, PO 455001
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <div class="jp_job_post_right_btn_wrapper">
+                                                                                <ul>
+                                                                                    <li>
+                                                                                        <a href="#"></a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="#">Part Time</a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="#">Apply</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="jp_job_post_keyword_wrapper">
+                                                                    <ul>
+                                                                        <li>Keywords :</li>
+                                                                        <li>
+                                                                            <a href="#">ui designer,</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">developer,</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">senior</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">it company,</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">design,</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">call center</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+                                                            <div class="pager_wrapper gc_blog_pagination">
+                                                                <ul class="pagination">
+                                                                    <li>
+                                                                        <a href="#">Priv.</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">1</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">2</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">Next</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 visible-sm visible-xs">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="jp_rightside_job_categories_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Jobs by Category</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c101" name="cb"/>
+                                                                    <label for=
+                                                                                   "c101">Graphic Designer
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Jobs by Location</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c109" name="cb"/>
+                                                                    <label for=
+                                                                                   "c109">Jobs in Delhi
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Your Skill’s</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c117" name="cb"/>
+                                                                    <label for=
+                                                                                   "c117">Javascript
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c118" name="cb"/>
+                                                                    <label for=
+                                                                                   "c118">HTML5
+                                                                        <span>(514)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c119" name="cb"/>
+                                                                    <label for=
+                                                                                   "c119">CSS3
+                                                                        <span>(554)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c120" name="cb"/>
+                                                                    <label for=
+                                                                                   "c120">PHP
+                                                                        <span>(457)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c121" name="cb"/>
+                                                                    <label for=
+                                                                                   "c121">Sales
+                                                                        <span>(1254)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c122" name="cb"/>
+                                                                    <label for=
+                                                                                   "c122">Marketing
+                                                                        <span>(554)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c123" name="cb"/>
+                                                                    <label for=
+                                                                                   "c123">Social Media
+                                                                        <span>(350)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c124" name="cb"/>
+                                                                    <label for=
+                                                                                   "c124">Web Design
+                                                                        <span>(221)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Salary</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c125" name="cb"/>
+                                                                    <label for=
+                                                                                   "c125">$1k - 2k
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c126" name="cb"/>
+                                                                    <label for=
+                                                                                   "c126">$3k - 5k
+                                                                        <span>(514)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c127" name="cb"/>
+                                                                    <label for=
+                                                                                   "c127">$5k - 8k
+                                                                        <span>(554)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c128" name="cb"/>
+                                                                    <label for=
+                                                                                   "c128">$5k - 10k
+                                                                        <span>(457)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c129" name="cb"/>
+                                                                    <label for=
+                                                                                   "c129">$10k - 20k
+                                                                        <span>(1254)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c130" name="cb"/>
+                                                                    <label for=
+                                                                                   "c130">$20k - 30k
+                                                                        <span>(554)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c131" name="cb"/>
+                                                                    <label for=
+                                                                                   "c131">$30k - 50k
+                                                                        <span>(350)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c132" name="cb"/>
+                                                                    <label for=
+                                                                                   "c132">$50k - 80k
+                                                                        <span>(221)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class=
+                                                         "jp_rightside_job_categories_wrapper jp_job_location_wrapper">
+                                                <div class="jp_rightside_job_categories_heading">
+                                                    <h4>Types</h4>
+                                                </div>
+                                                <div class="jp_rightside_job_categories_content">
+                                                    <div class="handyman_sec1_wrapper">
+                                                        <div class="content">
+                                                            <div class="box">
+                                                                <p>
+                                                                    <input type="checkbox" id="c133" name="cb"/>
+                                                                    <label for=
+                                                                                   "c133">Types
+                                                                        <span>(214)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c134" name="cb"/>
+                                                                    <label for=
+                                                                                   "c134">Part-time
+                                                                        <span>(514)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c135" name="cb"/>
+                                                                    <label for=
+                                                                                   "c135">Contract
+                                                                        <span>(554)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c136" name="cb"/>
+                                                                    <label for=
+                                                                                   "c136">Remotely
+                                                                        <span>(457)</span>
+                                                                    </label>
+                                                                </p>
+                                                                <p>
+                                                                    <input type="checkbox" id="c137" name="cb"/>
+                                                                    <label for=
+                                                                                   "c137">Temporary
+                                                                        <span>(1254)</span>
+                                                                    </label>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">SHOW MORE</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="jp_add_resume_wrapper jp_job_location_wrapper">
+                                                <div class="jp_add_resume_img_overlay"></div>
+                                                <div class="jp_add_resume_cont">
+                                                    <img src=
+                                                                 "/website_hr_recruitment/static/src/images/content/resume_logo.png" alt="logo"/>
+                                                    <h4>Get Best Matched Jobs On your Email. Add Resume NOW!</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">&#160;ADD RESUME</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=
+                                                     "col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-sm visible-xs">
+                                            <div class="pager_wrapper gc_blog_pagination">
+                                                <ul class="pagination">
+                                                    <li>
+                                                        <a href="#">Priv.</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">3</a>
+                                                    </li>
+                                                    <li class="hidden-xs">
+                                                        <a href="#">4</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Next</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- jp listing sidebar Wrapper End -->
+                </div>
+            </body>
+        </t>
+    </template>
+
+    <template id="detail" name="Job Detail">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Job Detail</t>
+<!--            <div id="wrap" class="js_hr_recruitment">-->
+<!--                <div class="oe_structure" id="oe_structure_website_hr_recruitment_detail_1"/>-->
+
+<!--                &lt;!&ndash; Breadcrumb &ndash;&gt;-->
+<!--                <section class="mb16 bg-white">-->
+<!--                    <div class="container">-->
+<!--                        <div class="float-right">-->
+<!--                            <a role="button" t-attf-href="/jobs/apply/#{job.id}"-->
+<!--                               class="btn btn-primary btn-lg float-right mt32 mb4">Apply Now!-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <label class="mb0 mt16">-->
+<!--                            <a href="/jobs">Jobs</a>-->
+<!--                        </label>-->
+<!--                        /-->
+<!--                        <h1 class="mb0 mt0" t-field="job.name"/>-->
+<!--                        <h4 class="mt0" t-field="job.address_id" t-options='{-->
+<!--                        "widget": "contact",-->
+<!--                        "fields": ["city"],-->
+<!--                        "no_tag_br": True-->
+<!--                    }'/>-->
+<!--                    </div>-->
+<!--                </section>-->
+
+<!--                <div t-field="job.website_description"/>-->
+
+<!--                <div class="oe_structure">-->
+<!--                    <section class="o_job_bottom_bar mt32 mb32">-->
+<!--                        <div class="text-center">-->
+<!--                            <a role="button" t-attf-href="/jobs/apply/#{job.id}" class="btn btn-primary btn-lg">Apply-->
+<!--                                Now!-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </section>-->
+<!--                </div>-->
+<!--            </div>-->
+        <!-- jp Tittle Wrapper Start -->
+        <div class="jp_tittle_main_wrapper">
+            <div class="jp_tittle_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="jp_tittle_heading_wrapper">
+                            <div class="jp_tittle_heading">
+                                <h2>HTML Developer (1-2 Yrs Exp.)</h2>
+                            </div>
+                            <div class="jp_tittle_breadcrumb_main_wrapper">
+                                <div class="jp_tittle_breadcrumb_wrapper">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Jobs</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Developer</a>
+                                        </li>
+                                        <li>HTML Developer (1-2 Yrs Exp.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jp Tittle Wrapper End -->
+        <!-- jp listing Single cont Wrapper Start -->
+        <div class="jp_listing_single_main_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <div class="jp_listing_left_sidebar_wrapper">
+                            <div class="jp_job_des">
+                                <h2>Job Description</h2>
+                                <p>Google is and always will be an engineering company. We hire
+                                    people with a broad set of ical skills who are ready to tackle some
+                                    of technology's greatest challenges and make an impact on millions,
+                                    if not billions, of users. At Google, engineers not only
+                                    revolutionize search, they routinely work on massive scalability
+                                    and storage solutions, large-scale applications and rely new
+                                    platforms for developers around the world. From AdWords to Chrome,
+                                    Android to Ye, Social to Local, Google engineers are changing the
+                                    world.
+                                </p>
+                                <ul>
+                                    <li>&#160;&#160;
+                                        <a href="#">www.example.com</a>
+                                    </li>
+                                    <li>&#160;&#160;
+                                        <a href="#">Download Info</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="jp_job_res">
+                                <h2>Responsibilities</h2>
+                                <p>Curabitur non nulla sit amet nisl tempus convallis quis ac
+                                    lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
+                                    a. Praesent sapien massa, convallis a pellentesque nec, egestas non
+                                    nisi. Curabitur aliquet quam id dui posuere blandit.
+                                </p>
+                                <ul>
+                                    <li>&#160;&#160; Build next-generation web applications with a
+                                        focus on the client side.
+                                    </li>
+                                    <li>&#160;&#160; Redesign UI's, implement new UI's, and pick up
+                                        Java as necessary.
+                                    </li>
+                                    <li>&#160;&#160; Explore and design dynamic and compelling consumer
+                                        experiences.
+                                    </li>
+                                    <li>&#160;&#160; Design and build scalable framework for web
+                                        applications.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="jp_job_res jp_job_qua">
+                                <h2>Minimum qualifications</h2>
+                                <ul>
+                                    <li>&#160;&#160; BA/BS degree in a technical field or equivalent
+                                        practical experience.
+                                    </li>
+                                    <li>&#160;&#160; 2 years of relevant work experience in software
+                                        development.
+                                    </li>
+                                    <li>&#160;&#160; Programming experience in C, C++ or Java.</li>
+                                    <li>&#160;&#160; Experience with AJAX, HTML and CSS.</li>
+                                </ul>
+                            </div>
+                            <div class="jp_job_apply">
+                                <h2>How To Apply</h2>
+                                <p>Praesent sapien massa, convallis a pellentesque nec, egestas non
+                                    nisi. Curabitur aliquet quam id dui posuere blandit. Curabitur
+                                    aliquet quam id dui posuere blandit. Curabitur non nulla sit amet
+                                    nisl tempus convallis quis ac lectus.
+                                </p>
+                            </div>
+                            <div class="jp_job_map">
+                                <h2>Loacation</h2>
+                                <div id="map" style="width:100%; float:left; height:300px;"></div>
+                            </div>
+                        </div>
+                        <div class="jp_listing_left_bottom_sidebar_wrapper">
+                            <div class="jp_listing_left_bottom_sidebar_social_wrapper">
+                                <ul class="hidden-xs">
+                                    <li>SHARE :</li>
+                                    <li>
+                                        <a href="#"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="hidden-xs">
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="hidden-xs">
+                                        <a href="#"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="jp_listing_left_bottom_sidebar_key_wrapper">
+                            <ul>
+                                <li>Keywords :</li>
+                                <li>
+                                    <a href="#">ui designer,</a>
+                                </li>
+                                <li>
+                                    <a href="#">developer,</a>
+                                </li>
+                                <li>
+                                    <a href="#">senior</a>
+                                </li>
+                                <li>
+                                    <a href="#">it company,</a>
+                                </li>
+                                <li>
+                                    <a href="#">design,</a>
+                                </li>
+                                <li>
+                                    <a href="#">call center</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="jp_listing_related_heading_wrapper">
+                            <h2>Related Jobs</h2>
+                            <div class="jp_listing_related_slider_wrapper">
+                                <div class="owl-carousel owl-theme">
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img1.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img2.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img3.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img1.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img2.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img3.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img1.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img2.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class=
+                                                             "jp_job_post_main_wrapper_cont jp_job_post_grid_main_wrapper_cont">
+                                                    <div class="jp_job_post_main_wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="jp_job_post_side_img">
+                                                                    <img src=
+                                                                                 "images/content/job_post_img3.jpg"
+                                                                         alt="post_img"/>
+                                                                </div>
+                                                                <div class="jp_job_post_right_cont">
+                                                                    <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                                                    <p>Webstrot Technology Pvt. Ltd.</p>
+                                                                    <ul>
+                                                                        <li>&#160; $12K - 15k P.A.</li>
+                                                                        <li>&#160; Caliphonia, PO 455001</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <div class="jp_job_post_right_btn_wrapper">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Part Time</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Apply</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_job_post_keyword_wrapper">
+                                                        <ul>
+                                                            <li>Keywords :</li>
+                                                            <li>
+                                                                <a href="#">ui designer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">developer,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">senior</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">it company,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">design,</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">call center</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class=
+                                             "jp_rightside_job_categories_wrapper jp_rightside_listing_single_wrapper">
+                                    <div class="jp_rightside_job_categories_heading">
+                                        <h4>Job Overview</h4>
+                                    </div>
+                                    <div class="jp_jop_overview_img_wrapper">
+                                        <div class="jp_jop_overview_img">
+                                            <img src=
+                                                         "images/content/job_post_img1.jpg" alt="post_img"/>
+                                        </div>
+                                    </div>
+                                    <div class="jp_job_listing_single_post_right_cont">
+                                        <div class="jp_job_listing_single_post_right_cont_wrapper">
+                                            <h4>HTML Developer (1 - 2 Yrs Exp.)</h4>
+                                            <p>Webstrot Technology Pvt. Ltd.</p>
+                                        </div>
+                                    </div>
+                                    <div class="jp_job_post_right_overview_btn_wrapper">
+                                        <div class="jp_job_post_right_overview_btn">
+                                            <ul>
+                                                <li>
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Part Time</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="jp_listing_overview_list_outside_main_wrapper">
+                                        <div class="jp_listing_overview_list_main_wrapper">
+                                            <div class="jp_listing_list_icon"></div>
+                                            <div class="jp_listing_list_icon_cont_wrapper">
+                                                <ul>
+                                                    <li>Date Posted:</li>
+                                                    <li>Octomber 02, 2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class=
+                                                     "jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2">
+                                            <div class="jp_listing_list_icon"></div>
+                                            <div class="jp_listing_list_icon_cont_wrapper">
+                                                <ul>
+                                                    <li>Location:</li>
+                                                    <li>Los Angeles Califonia PO, 455001</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class=
+                                                     "jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2">
+                                            <div class="jp_listing_list_icon"></div>
+                                            <div class="jp_listing_list_icon_cont_wrapper">
+                                                <ul>
+                                                    <li>Job Title:</li>
+                                                    <li>HTML Developer</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class=
+                                                     "jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2">
+                                            <div class="jp_listing_list_icon"></div>
+                                            <div class="jp_listing_list_icon_cont_wrapper">
+                                                <ul>
+                                                    <li>Hours:</li>
+                                                    <li>40h / Week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class=
+                                                     "jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2">
+                                            <div class="jp_listing_list_icon"></div>
+                                            <div class="jp_listing_list_icon_cont_wrapper">
+                                                <ul>
+                                                    <li>Salary:</li>
+                                                    <li>$12K - 15k P.A.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class=
+                                                     "jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2">
+                                            <div class="jp_listing_list_icon"></div>
+                                            <div class="jp_listing_list_icon_cont_wrapper">
+                                                <ul>
+                                                    <li>Category:</li>
+                                                    <li>Developer</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class=
+                                                     "jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2">
+                                            <div class="jp_listing_list_icon"></div>
+                                            <div class="jp_listing_list_icon_cont_wrapper">
+                                                <ul>
+                                                    <li>Experience:</li>
+                                                    <li>1+ Years Experience</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="jp_listing_right_bar_btn_wrapper">
+                                            <div class="jp_listing_right_bar_btn">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">&#160;Apply With Facebook</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">&#160;Apply NOw!</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jp listing Single cont Wrapper End -->
+        <!-- jp downlord Wrapper Start -->
+        <div class="jp_downlord_main_wrapper">
+            <div class="jp_downlord_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class=
+                                 "col-lg-6 col-md-6 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+                        <div class="jp_down_mob_img_wrapper">
+                            <img src=
+                                         "images/content/mobail.png" alt="mobail_img"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="ss_download_wrapper_details">
+                            <h1>
+                                <span>Download</span>
+                                <br/>
+                                Job Portal App Now!
+                            </h1>
+                            <p>Fast, Simple &amp; Delightful. All it takes is 30 seconds to
+                                Download.
+                            </p>
+                            <a href="#" class="ss_appstore">App Store</a>
+                            <a href="#" class=
+                                    "ss_playstore">Play Store
+                            </a>
+                        </div>
+                    </div>
+                    <div class=
+                                 "col-lg-6 col-md-6 col-sm-12 col-xs-12 visible-sm visible-xs">
+                        <div class="jp_down_mob_img_wrapper">
+                            <img src=
+                                         "images/content/mobail.png" class="img-responsive" alt=
+                                         "mobail_img"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jp downlord Wrapper End -->
+        </t>
+    </template>
+
+    <template id="apply">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Apply Job</t>
+
+            <div id="wrap" class="container">
+                <h1 class="text-center mt-2">
+                    Job Application Form
+                </h1>
+                <h2 t-if="job" class="text-center text-muted">
+                    <span t-field="job.name"/>
+                </h2>
+
+                <div class="row mt-3">
+                    <section id="forms" class="col">
+                        <span class="hidden" data-for="hr_recruitment_form"
+                              t-att-data-values="{'department_id': job and job.department_id.id or '', 'job_id': job and job.id or ''}"/>
+                        <form id="hr_recruitment_form" action="/website_form/" method="post" class="s_website_form"
+                              enctype="multipart/form-data" data-model_name="hr.applicant"
+                              data-success_page="/job-thank-you" hide-change-model="true">
+                            <div class="form-group row form-field o_website_form_required_custom">
+                                <div class="col-lg-3 col-md-4 text-right">
+                                    <label class="col-form-label" for="partner_name">Your Name</label>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <input type="text" class="form-control o_website_form_input" name="partner_name"
+                                           required=""/>
+                                </div>
+                            </div>
+                            <div class="form-group row form-field o_website_form_required_custom">
+                                <div class="col-lg-3 col-md-4 text-right">
+                                    <label class="col-form-label" for="email_from">Your Email</label>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <input type="email" class="form-control o_website_form_input" name="email_from"
+                                           required=""/>
+                                </div>
+                            </div>
+                            <div class="form-group row form-field o_website_form_required_custom">
+                                <div class="col-lg-3 col-md-4 text-right">
+                                    <label class="col-form-label" for="partner_phone">Your Phone Number</label>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <input type="text" class="form-control o_website_form_input" name="partner_phone"
+                                           required=""/>
+                                </div>
+                            </div>
+                            <div class="form-group row form-field">
+                                <div class="col-lg-3 col-md-4 text-right">
+                                    <label class="col-form-label" for="description">Short Introduction</label>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <textarea class="form-control o_website_form_input" name="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row form-field o_website_form_custom">
+                                <div class="col-lg-3 col-md-4 text-right">
+                                    <label class="col-form-label" for="Resume">Resume</label>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <input type="file" class="form-control o_website_form_input" name="Resume"/>
+                                </div>
+                            </div>
+                            <div class="form-group row form-field d-none">
+                                <div class="col-lg-3 col-md-4">
+                                    <label class="col-form-label" for="job_id">Job</label>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <input type="hidden" class="form-control o_website_form_input" name="job_id"/>
+                                </div>
+                            </div>
+                            <div class="form-group row form-field d-none">
+                                <div class="col-lg-3 col-md-4">
+                                    <label class="col-form-label" for="department_id">Department</label>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <input type="hidden" class="form-control o_website_form_input"
+                                           name="department_id"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-lg-3 offset-md-4 col-md-8 col-lg-7">
+                                    <a href="#" role="button" class="btn btn-primary btn-lg o_website_form_send">
+                                        Submit
+                                    </a>
+                                    <span id="o_website_form_result"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="default_website_description">
+        <!-- Description -->
+        <section class="mb32">
+            <div class="container">
+                <p class="mt0 lead">
+                    Short summary of the job: A sales job for smart people and can
+                    learn quickly new industries management practices. You will be
+                    in charge of the full sales cycle from the opportunity
+                    qualification to the negotiation, going through astonishing
+                    product demos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Responsibilities -->
+        <section class="o_tasks">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <h4>
+                            <strong>Responsibilities</strong>
+                        </h4>
+                        <p>Full sales cycle</p>
+                        <p>Achieve monthly targets</p>
+                        <p>US + Canada Territory</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <h4>
+                            <strong>Challenges</strong>
+                        </h4>
+                        <p>Full sales cycle</p>
+                        <p>Achieve monthly targets</p>
+                        <p>US + Canada Territory</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <h4>
+                            <strong>Must Have</strong>
+                        </h4>
+                        <p>Full sales cycle</p>
+                        <p>Achieve monthly targets</p>
+                        <p>US + Canada Territory</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's great -->
+        <section class="mb32 mt16">
+            <div class="container">
+                <h4>
+                    <strong>What's great in the job?</strong>
+                </h4>
+                <ul>
+                    <li>No outbound calls, you get leads and focus on providing value to them</li>
+                    <li>You sell management software to directors of SMEs: interesting projects and people</li>
+                    <li>Large apps scope: CRM, MRP, Accounting, Inventory, HR, Project Mgt, etc.</li>
+                    <li>Direct coordination with functional consultants for qualification and follow ups</li>
+                    <li>High commissions for good performers</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Datas -->
+        <section style="border: 0 solid #e3e3e3; border-width: 2px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mt16 mb16">
+                        <div class="s_rating s_rating_3">
+                            <div class="s_rating_stars">
+                                <h6 class="mb0">Job Complexity:</h6>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <div class="s_rating_bar"/>
+                            </div>
+                        </div>
+                        <div class="s_rating s_rating_1">
+                            <div class="s_rating_stars">
+                                <h6 class="mb0">Personal Evolution:</h6>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <div class="s_rating_bar"/>
+                            </div>
+                        </div>
+                        <div class="s_rating s_rating_4">
+                            <div class="s_rating_stars">
+                                <h6 class="mb0">Variability of the Job:</h6>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <div class="s_rating_bar"/>
+                            </div>
+                        </div>
+                        <div class="s_rating s_rating_5">
+                            <div class="s_rating_stars">
+                                <h6 class="mb0">Job Security:</h6>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <div class="s_rating_bar"/>
+                            </div>
+                        </div>
+                        <div class="s_rating s_rating_2">
+                            <div class="s_rating_stars">
+                                <h6 class="mb0">Overachieving Possibilities:</h6>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <i class="fa"/>
+                                <div class="s_rating_bar"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt16 mb16">
+                        <h6 class="mb0">Team / Company Size:</h6>
+                        <p class="text-uppercase ">10 / 40 people</p>
+                        <h6 class="mb0">Avg Deal Size:</h6>
+                        <p class="text-uppercase ">$15k</p>
+                        <h6 class="mb0">Sales Cycle:</h6>
+                        <p class="text-uppercase ">3 months</p>
+                        <h6 class="mb0">Company Growth:</h6>
+                        <p class="text-uppercase ">50% YoY</p>
+                        <h6 class="mb0">Company Maturity:</h6>
+                        <p class="text-uppercase ">Profitable</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt16 mb16">
+                        <h3 class="mt0">Need More Info?</h3>
+                        <ul>
+                            <li>
+                                <a href="#">The founder’s story</a>
+                            </li>
+                            <li>
+                                <a href="#">The culture</a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/odoo/likes">What people say about us?</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </t>
-</template>
+        </section>
 
-<template id="detail" name="Job Detail">
-    <t t-call="website.layout">
-        <t t-set="additional_title">Job Detail</t>
-        <div id="wrap" class="js_hr_recruitment">
-            <div class="oe_structure" id="oe_structure_website_hr_recruitment_detail_1"/>
-
-            <!-- Breadcrumb -->
-            <section class="mb16 bg-white">
-                <div class="container">
-                    <div class="float-right">
-                        <a role="button" t-attf-href="/jobs/apply/#{job.id}" class="btn btn-primary btn-lg float-right mt32 mb4">Apply Now!</a>
+        <!-- Perks -->
+        <section class="o_perk mt16 mb16">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mb0 mt8">
+                            <span class="fa fa-2x fa-heart"/>
+                            Benefits
+                        </h4>
+                        <p>Healthcare, dental, vision, life insurance, Flexible Spending Account (FSA), Health Savings
+                            Account (HSA)
+                        </p>
                     </div>
-                    <label class="mb0 mt16"><a href="/jobs">Jobs</a></label> /
-                    <h1 class="mb0 mt0" t-field="job.name"/>
-                    <h4 class="mt0" t-field="job.address_id" t-options='{
-                        "widget": "contact",
-                        "fields": ["city"],
-                        "no_tag_br": True
-                    }'/>
-                </div>
-            </section>
-
-            <div t-field="job.website_description"/>
-
-            <div class="oe_structure">
-                <section class="o_job_bottom_bar mt32 mb32">
-                    <div class="text-center">
-                        <a role="button" t-attf-href="/jobs/apply/#{job.id}" class="btn btn-primary btn-lg">Apply Now!</a>
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mt8 mb0">
+                            <span class="fa fa-2x fa-sun-o"/>
+                            PTOs
+                        </h4>
+                        <p>Vacation, Sick, and paid leaves</p>
                     </div>
-                </section>
-            </div>
-        </div>
-    </t>
-</template>
-
-<template id="apply">
-    <t t-call="website.layout">
-        <t t-set="additional_title">Apply Job</t>
-
-        <div id="wrap"  class="container">
-            <h1 class="text-center mt-2">
-                Job Application Form
-            </h1>
-            <h2 t-if="job" class="text-center text-muted">
-                <span t-field="job.name"/>
-            </h2>
-
-            <div class="row mt-3">
-                <section id="forms" class="col">
-                    <span class="hidden" data-for="hr_recruitment_form" t-att-data-values="{'department_id': job and job.department_id.id or '', 'job_id': job and job.id or ''}" />
-                    <form id="hr_recruitment_form" action="/website_form/" method="post" class="s_website_form" enctype="multipart/form-data" data-model_name="hr.applicant" data-success_page="/job-thank-you" hide-change-model="true">
-                        <div class="form-group row form-field o_website_form_required_custom">
-                            <div class="col-lg-3 col-md-4 text-right">
-                                <label class="col-form-label" for="partner_name">Your Name</label>
-                            </div>
-                            <div class="col-lg-7 col-md-8">
-                                <input type="text" class="form-control o_website_form_input" name="partner_name" required=""/>
-                            </div>
-                        </div>
-                        <div class="form-group row form-field o_website_form_required_custom">
-                            <div class="col-lg-3 col-md-4 text-right">
-                                <label class="col-form-label" for="email_from">Your Email</label>
-                            </div>
-                            <div class="col-lg-7 col-md-8">
-                                <input type="email" class="form-control o_website_form_input" name="email_from" required=""/>
-                            </div>
-                        </div>
-                        <div class="form-group row form-field o_website_form_required_custom">
-                            <div class="col-lg-3 col-md-4 text-right">
-                                <label class="col-form-label" for="partner_phone">Your Phone Number</label>
-                            </div>
-                            <div class="col-lg-7 col-md-8">
-                                <input type="text" class="form-control o_website_form_input" name="partner_phone" required=""/>
-                            </div>
-                        </div>
-                        <div class="form-group row form-field">
-                            <div class="col-lg-3 col-md-4 text-right">
-                                <label class="col-form-label" for="description">Short Introduction</label>
-                            </div>
-                            <div class="col-lg-7 col-md-8">
-                                <textarea class="form-control o_website_form_input" name="description"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row form-field o_website_form_custom">
-                          <div class="col-lg-3 col-md-4 text-right">
-                            <label class="col-form-label" for="Resume">Resume</label>
-                          </div>
-                          <div class="col-lg-7 col-md-8">
-                            <input type="file" class="form-control o_website_form_input" name="Resume"/>
-                          </div>
-                        </div>
-                        <div class="form-group row form-field d-none">
-                            <div class="col-lg-3 col-md-4">
-                                <label class="col-form-label" for="job_id">Job</label>
-                            </div>
-                            <div class="col-lg-7 col-md-8">
-                                <input type="hidden" class="form-control o_website_form_input" name="job_id"/>
-                            </div>
-                        </div>
-                        <div class="form-group row form-field d-none">
-                            <div class="col-lg-3 col-md-4">
-                                <label class="col-form-label" for="department_id">Department</label>
-                            </div>
-                            <div class="col-lg-7 col-md-8">
-                                <input type="hidden" class="form-control o_website_form_input" name="department_id"/>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="offset-lg-3 offset-md-4 col-md-8 col-lg-7">
-                                <a href="#" role="button" class="btn btn-primary btn-lg o_website_form_send">Submit</a>
-                                <span id="o_website_form_result"></span>
-                            </div>
-                        </div>
-                    </form>
-                </section>
-            </div>
-        </div>
-    </t>
-</template>
-
-<template id="default_website_description">
-    <!-- Description -->
-    <section class="mb32">
-        <div class="container">
-            <p class="mt0 lead">
-                Short summary of the job: A sales job for smart people and can
-                learn quickly new industries management practices. You will be
-                in charge of the full sales cycle from the opportunity
-                qualification to the negotiation, going through astonishing
-                product demos.
-            </p>
-        </div>
-    </section>
-
-    <!-- Responsibilities -->
-    <section class="o_tasks">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <h4><strong>Responsibilities</strong></h4>
-                    <p>Full sales cycle</p>
-                    <p>Achieve monthly targets</p>
-                    <p>US + Canada Territory</p>
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mt8 mb0">
+                            <span class="fa fa-2x fa-car"/>
+                            Save on commute
+                        </h4>
+                        <p>Pre-tax commuter benefitsbr<br/>(parking and transit)
+                        </p>
+                    </div>
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mb0 mt8">
+                            <span class="fa fa-2x fa-check-circle"/>
+                            Discount Programs
+                        </h4>
+                        <p>Brand-name product and services in categories like travel, electronics, health, fitness,
+                            cellular, and more
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <h4><strong>Challenges</strong></h4>
-                    <p>Full sales cycle</p>
-                    <p>Achieve monthly targets</p>
-                    <p>US + Canada Territory</p>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <h4><strong>Must Have</strong></h4>
-                    <p>Full sales cycle</p>
-                    <p>Achieve monthly targets</p>
-                    <p>US + Canada Territory</p>
+                <div class="row">
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mb0 mt8">
+                            <span class="fa fa-2x fa-map-marker"/>
+                            Prime location
+                        </h4>
+                        <p>Only a couple blocs from BART, Caltrain, Highway 101, carpool pickup, and Bay Bridge.</p>
+                    </div>
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mt8 mb0">
+                            <span class="fa fa-2x fa-calendar"/>
+                            Sponsored Events
+                        </h4>
+                        <p>Tuesday Dinners, Monthly Lunch Mixers, Monthly Happy Hour, Annual day event</p>
+                    </div>
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mt8 mb0">
+                            <span class="fa fa-2x fa-futbol-o"/>
+                            Sport Activity
+                        </h4>
+                        <p>Play any sport with colleagues and the bill is covered</p>
+                    </div>
+                    <div class="text-center col-lg-3 mt16 mb16">
+                        <h4 class="mb0 mt8">
+                            <span class="fa fa-2x fa-coffee"/>
+                            Eat &amp; Drink
+                        </h4>
+                        <p>Peet's and Philz coffee provided all day to order and pantry snacks</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- What's great -->
-    <section class="mb32 mt16">
-        <div class="container">
-            <h4><strong>What's great in the job?</strong></h4>
-            <ul>
-                <li>No outbound calls, you get leads and focus on providing value to them</li>
-                <li>You sell management software to directors of SMEs: interesting projects and people</li>
-                <li>Large apps scope: CRM, MRP, Accounting, Inventory, HR, Project Mgt, etc.</li>
-                <li>Direct coordination with functional consultants for qualification and follow ups</li>
-                <li>High commissions for good performers</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Datas -->
-    <section style="border: 0 solid #e3e3e3; border-width: 2px 0;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mt16 mb16">
-                    <div class="s_rating s_rating_3">
-                        <div class="s_rating_stars">
-                            <h6 class="mb0">Job Complexity:</h6>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <div class="s_rating_bar"/>
-                        </div>
+        <!-- Photos -->
+        <section class="mt16 mb16">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6 mt16 mb16">
+                        <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_3.jpg"/>
                     </div>
-                    <div class="s_rating s_rating_1">
-                        <div class="s_rating_stars">
-                            <h6 class="mb0">Personal Evolution:</h6>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <div class="s_rating_bar"/>
-                        </div>
+                    <div class="col-md-6 col-lg-3 mt16 mb16">
+                        <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_2.jpg"/>
                     </div>
-                    <div class="s_rating s_rating_4">
-                        <div class="s_rating_stars">
-                            <h6 class="mb0">Variability of the Job:</h6>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <div class="s_rating_bar"/>
-                        </div>
-                    </div>
-                    <div class="s_rating s_rating_5">
-                        <div class="s_rating_stars">
-                            <h6 class="mb0">Job Security:</h6>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <div class="s_rating_bar"/>
-                        </div>
-                    </div>
-                    <div class="s_rating s_rating_2">
-                        <div class="s_rating_stars">
-                            <h6 class="mb0">Overachieving Possibilities:</h6>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <i class="fa"/>
-                            <div class="s_rating_bar"/>
-                        </div>
+                    <div class="col-md-6 col-lg-3 mt16 mb16">
+                        <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_4.jpg"/>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mt16 mb16">
-                    <h6 class="mb0">Team / Company Size:</h6>
-                    <p class="text-uppercase ">10  / 40 people</p>
-                    <h6 class="mb0">Avg Deal Size:</h6>
-                    <p class="text-uppercase ">$15k</p>
-                    <h6 class="mb0">Sales Cycle:</h6>
-                    <p class="text-uppercase ">3 months</p>
-                    <h6 class="mb0">Company Growth:</h6>
-                    <p class="text-uppercase ">50% YoY</p>
-                    <h6 class="mb0">Company Maturity:</h6>
-                    <p class="text-uppercase ">Profitable</p>
-                </div>
-                <div class="col-md-6 col-lg-4 mt16 mb16">
-                    <h3 class="mt0">Need More Info?</h3>
-                    <ul>
-                        <li><a href="#">The founder’s story</a></li>
-                        <li><a href="#">The culture</a></li>
-                        <li><a href="https://twitter.com/odoo/likes">What people say about us?</a></li>
-                    </ul>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mt16 mb16">
+                        <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_6.jpg"/>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mt16 mb16">
+                        <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_5.jpg"/>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mt16 mb16">
+                        <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_1.jpg"/>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </template>
 
-    <!-- Perks -->
-    <section class="o_perk mt16 mb16">
-        <div class="container">
-            <div class="row">
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mb0 mt8"><span class="fa fa-2x fa-heart"/>
-                    Benefits</h4>
-                    <p>Healthcare, dental, vision, life insurance, Flexible Spending Account (FSA), Health Savings Account (HSA)</p>
-                </div>
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mt8 mb0"><span class="fa fa-2x fa-sun-o"/>
-                    PTOs</h4>
-                    <p>Vacation, Sick, and paid leaves</p>
-                </div>
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mt8 mb0"><span class="fa fa-2x fa-car"/>
-                    Save on commute</h4>
-                    <p>Pre-tax commuter benefitsbr <br/>(parking and transit) </p>
-                    </div>
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mb0 mt8"><span class="fa fa-2x fa-check-circle"/>
-                    Discount Programs</h4>
-                    <p>Brand-name product and services in categories like travel, electronics, health, fitness, cellular, and more</p>
-                </div>
-            </div><div class="row">
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mb0 mt8"><span class="fa fa-2x fa-map-marker"/>
-                    Prime location</h4>
-                    <p>Only a couple blocs from BART, Caltrain, Highway 101, carpool pickup, and Bay Bridge.</p>
-                </div>
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mt8 mb0"><span class="fa fa-2x fa-calendar"/>
-                    Sponsored Events</h4>
-                    <p>Tuesday Dinners, Monthly Lunch Mixers, Monthly Happy Hour, Annual day event</p>
-                </div>
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mt8 mb0"><span class="fa fa-2x fa-futbol-o"/>
-                    Sport Activity</h4>
-                    <p>Play any sport with colleagues and the bill is covered</p>
-                    </div>
-                <div class="text-center col-lg-3 mt16 mb16">
-                    <h4 class="mb0 mt8"><span class="fa fa-2x fa-coffee"/>
-                    Eat &amp; Drink</h4>
-                    <p>Peet's and Philz coffee provided all day to order and pantry snacks</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Photos -->
-    <section class="mt16 mb16">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-lg-6 mt16 mb16">
-                    <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_3.jpg"/>
-                </div>
-                <div class="col-md-6 col-lg-3 mt16 mb16">
-                    <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_2.jpg"/>
-                </div>
-                <div class="col-md-6 col-lg-3 mt16 mb16">
-                    <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_4.jpg"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 mt16 mb16">
-                    <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_6.jpg"/>
-                </div>
-                <div class="col-md-6 col-lg-3 mt16 mb16">
-                    <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_5.jpg"/>
-                </div>
-                <div class="col-md-12 col-lg-6 mt16 mb16">
-                    <img alt="" class="img img-fluid" src="/website_hr_recruitment/static/src/img/job_image_1.jpg"/>
-                </div>
-            </div>
-        </div>
-    </section>
-</template>
-
-<record id="thankyou" model="website.page">
-    <field name="url">/job-thank-you</field>
-    <field name="is_published">True</field>
-    <field name="website_indexed" eval="False"/>
-    <field name="name">Thank you (Recruitment)</field>
-    <field name="type">qweb</field>
-    <field name="key">website_hr_recruitment.thankyou</field>
-    <field name="arch" type="xml">
-        <t name="Thank you (Recruitment)" t-name="website_hr_recruitment.thankyou">
-            <t t-call="website.layout">
-                <div id="wrap">
-                    <div class="oe_structure">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h1 class="text-center">Congratulations!</h1>
-                                    <p class="text-center">
-                                        Your application has been posted successfully.
-                                    </p>
-                                </div>
-                                <t t-if="request.session.get('form_builder_model_model', '') == 'hr.applicant'">
-                                    <t t-set="job" t-value="request.website._website_form_last_record().sudo().job_id"/>
-                                    <t t-set="responsible" t-value="job and job.user_id.website_published and job.user_id "/>
-                                </t>
-                                <t t-if="responsible">
+    <record id="thankyou" model="website.page">
+        <field name="url">/job-thank-you</field>
+        <field name="is_published">True</field>
+        <field name="website_indexed" eval="False"/>
+        <field name="name">Thank you (Recruitment)</field>
+        <field name="type">qweb</field>
+        <field name="key">website_hr_recruitment.thankyou</field>
+        <field name="arch" type="xml">
+            <t name="Thank you (Recruitment)" t-name="website_hr_recruitment.thankyou">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="oe_structure">
+                            <div class="container">
+                                <div class="row">
                                     <div class="col-lg-12">
-                                        <h3 class="mb32 text-center">Your application has been sent to:</h3>
+                                        <h1 class="text-center">Congratulations!</h1>
+                                        <p class="text-center">
+                                            Your application has been posted successfully.
+                                        </p>
                                     </div>
-                                    <div class="col-lg-1 offset-lg-4">
-                                        <p t-field="responsible.image_128" t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'rounded-circle d-block mx-auto o_image_64_cover'}"/>
+                                    <t t-if="request.session.get('form_builder_model_model', '') == 'hr.applicant'">
+                                        <t t-set="job"
+                                           t-value="request.website._website_form_last_record().sudo().job_id"/>
+                                        <t t-set="responsible"
+                                           t-value="job and job.user_id.website_published and job.user_id "/>
+                                    </t>
+                                    <t t-if="responsible">
+                                        <div class="col-lg-12">
+                                            <h3 class="mb32 text-center">Your application has been sent to:</h3>
+                                        </div>
+                                        <div class="col-lg-1 offset-lg-4">
+                                            <p t-field="responsible.image_128"
+                                               t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'rounded-circle d-block mx-auto o_image_64_cover'}"/>
+                                        </div>
+                                        <div class="col-lg-5 o_responsible_data">
+                                            <h4 class="mt0" t-field="responsible.name"/>
+                                            <p t-field="responsible.function"/>
+                                            <t t-if='responsible.email'>
+                                                <i class="fa fa-envelope" role="img" aria-label="Email"
+                                                   title="Email"></i>
+                                                <a t-attf-href="mailto:#{responsible.email}" t-esc="responsible.email"/>
+                                            </t>
+                                            <t t-if='responsible.phone'>
+                                                <br/>
+                                                <i class="fa fa-phone" role="img" aria-label="Phone" title="Phone"></i>
+                                                <span t-field="responsible.phone"/>
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-12 mt32 text-center">
+                                            <span>
+                                                We usually reply between one and three days.
+                                                <br/>
+                                                Feel free to contact him/her if you have further questions.
+                                            </span>
+                                        </div>
+                                    </t>
+                                </div>
+                                <div class="row" id="o_recruitment_thank_cta">
+                                    <div class="col-lg-12 text-center mt32 mb32">
+                                        In the meantime,
+                                        <h3 class="mt8 mb32">Look around on our website:</h3>
+                                        <a role="button" href="/" class="btn btn-primary btn-lg">Continue To Our
+                                            Website
+                                        </a>
                                     </div>
-                                    <div class="col-lg-5 o_responsible_data">
-                                        <h4 class="mt0" t-field="responsible.name"/>
-                                        <p t-field="responsible.function"/>
-                                        <t t-if='responsible.email'>
-                                            <i class="fa fa-envelope" role="img" aria-label="Email" title="Email"></i> <a t-attf-href="mailto:#{responsible.email}" t-esc="responsible.email"/>
-                                        </t>
-                                        <t t-if='responsible.phone'>
-                                            <br/><i class="fa fa-phone" role="img" aria-label="Phone" title="Phone"></i> <span t-field="responsible.phone"/>
-                                        </t>
-                                    </div>
-                                    <div class="col-lg-12 mt32 text-center">
-                                        <span>
-                                            We usually reply between one and three days.<br/>
-                                            Feel free to contact him/her if you have further questions.
-                                        </span>
-                                    </div>
-                                </t>
-                            </div>
-                            <div class="row" id="o_recruitment_thank_cta">
-                                <div class="col-lg-12 text-center mt32 mb32">
-                                    In the meantime,
-                                    <h3 class="mt8 mb32">Look around on our website:</h3>
-                                    <a role="button" href="/" class="btn btn-primary btn-lg">Continue To Our Website</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </t>
             </t>
-        </t>
-    </field>
-</record>
+        </field>
+    </record>
 
-<template id="job_countries" inherit_id="website_hr_recruitment.index" active="False" customize_show="True" name="Filter by Countries">
-    <xpath expr="//div[@id='jobs_grid_left']" position="inside">
-        <ul class="nav nav-pills flex-column mb32">
-            <li class="nav-item"><a t-attf-href="/jobs#{ '/department/%s' % slug(department_id) if department_id else '' }#{ '/office/%s' % office_id if office_id else '' }?all_countries=1" t-attf-class="nav-link#{'' if country_id else ' active'}">All Countries</a></li>
-            <t t-foreach="countries" t-as="country">
+    <template id="job_countries" inherit_id="website_hr_recruitment.index" active="False" customize_show="True"
+              name="Filter by Countries">
+        <xpath expr="//div[@id='jobs_grid_left']" position="inside">
+            <ul class="nav nav-pills flex-column mb32">
                 <li class="nav-item">
-                    <a t-attf-href="/jobs/country/#{ slug(country) }#{ '/department/%s' % slug(department_id) if department_id else '' }#{ '/office/%s' % office_id if office_id else '' }"
-                        t-attf-class="nav-link#{' active' if country_id and country_id.id == country.id else ''}"><span t-field="country.name"/></a>
-                </li>
-            </t>
-        </ul>
-    </xpath>
-    <xpath expr="//div[@id='jobs_grid_left']" position="attributes">
-        <attribute name="class">col-lg-3</attribute>
-    </xpath>
-    <xpath expr="//div[@id='jobs_grid']" position="attributes">
-        <attribute name="class">col-lg-9</attribute>
-    </xpath>
-</template>
-
-<template id="job_departments" inherit_id="website_hr_recruitment.index" active="False" customize_show="True" name="Filter by Departments">
-    <xpath expr="//div[@id='jobs_grid_left']" position="inside">
-        <ul class="nav nav-pills flex-column mb32">
-            <li class="nav-item"><a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }#{ '/office/%s' % office_id if office_id else ''}" t-attf-class="nav-link#{'' if department_id else ' active'}">All Departments</a></li>
-            <t t-foreach="departments" t-as="department">
-                <li class="nav-item">
-                    <a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }/department/#{ slug(department) }#{ '/office/%s' % office_id if office_id else '' }" t-attf-class="nav-link#{' active' if department_id and department_id.id == department.id else ''}"><span t-field="department.name"/></a>
-                </li>
-            </t>
-        </ul>
-    </xpath>
-    <xpath expr="//div[@id='jobs_grid_left']" position="attributes">
-        <attribute name="class">col-lg-3</attribute>
-    </xpath>
-    <xpath expr="//div[@id='jobs_grid']" position="attributes">
-        <attribute name="class">col-lg-9</attribute>
-    </xpath>
-</template>
-
-<template id="job_offices" inherit_id="website_hr_recruitment.index" active="False" customize_show="True" name="Filter by Offices">
-    <xpath expr="//div[@id='jobs_grid_left']" position="inside">
-        <ul class="nav nav-pills flex-column mb32">
-            <li class="nav-item"><a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }#{ '/department/%s' % slug(department_id) if department_id else '' }" t-attf-class="nav-link#{'' if office_id else ' active'}">All Offices</a></li>
-            <t t-foreach="offices" t-as="thisoffice">
-                <li class="nav-item">
-                    <a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }#{ '/department/%s' % slug(department_id) if department_id else '' }/office/#{ thisoffice.id }"
-                        t-attf-class="nav-link#{' active' if office_id == thisoffice.id else ''}">
-                        <span t-field="thisoffice.city"/><t t-if="thisoffice.country_id">,
-                            <span t-field="thisoffice.country_id.name"/>
-                        </t>
+                    <a t-attf-href="/jobs#{ '/department/%s' % slug(department_id) if department_id else '' }#{ '/office/%s' % office_id if office_id else '' }?all_countries=1"
+                       t-attf-class="nav-link#{'' if country_id else ' active'}">All Countries
                     </a>
                 </li>
-            </t>
-        </ul>
-    </xpath>
-    <xpath expr="//div[@id='jobs_grid_left']" position="attributes">
-        <attribute name="class">col-lg-3</attribute>
-    </xpath>
-    <xpath expr="//div[@id='jobs_grid']" position="attributes">
-        <attribute name="class">col-lg-9</attribute>
-    </xpath>
-</template>
+                <t t-foreach="countries" t-as="country">
+                    <li class="nav-item">
+                        <a t-attf-href="/jobs/country/#{ slug(country) }#{ '/department/%s' % slug(department_id) if department_id else '' }#{ '/office/%s' % office_id if office_id else '' }"
+                           t-attf-class="nav-link#{' active' if country_id and country_id.id == country.id else ''}">
+                            <span t-field="country.name"/>
+                        </a>
+                    </li>
+                </t>
+            </ul>
+        </xpath>
+        <xpath expr="//div[@id='jobs_grid_left']" position="attributes">
+            <attribute name="class">col-lg-3</attribute>
+        </xpath>
+        <xpath expr="//div[@id='jobs_grid']" position="attributes">
+            <attribute name="class">col-lg-9</attribute>
+        </xpath>
+    </template>
 
-<!-- User Navbar -->
-<template id="user_navbar_inherit_website_hr_recruitment" inherit_id="website.user_navbar">
-    <xpath expr="//div[@id='o_new_content_menu_choices']//div[@name='module_website_hr_recruitment']/a" position="attributes">
-        <attribute name="href">/jobs/add</attribute>
-    </xpath>
-    <xpath expr="//div[@id='o_new_content_menu_choices']//div[@name='module_website_hr_recruitment']" position="attributes">
-        <attribute name="name"/>
-        <attribute name="t-att-data-module-id"/>
-        <attribute name="t-att-data-module-shortdesc"/>
-        <attribute name="groups">hr_recruitment.group_hr_recruitment_manager</attribute>
-    </xpath>
-</template>
+    <template id="job_departments" inherit_id="website_hr_recruitment.index" active="False" customize_show="True"
+              name="Filter by Departments">
+        <xpath expr="//div[@id='jobs_grid_left']" position="inside">
+            <ul class="nav nav-pills flex-column mb32">
+                <li class="nav-item">
+                    <a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }#{ '/office/%s' % office_id if office_id else ''}"
+                       t-attf-class="nav-link#{'' if department_id else ' active'}">All Departments
+                    </a>
+                </li>
+                <t t-foreach="departments" t-as="department">
+                    <li class="nav-item">
+                        <a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }/department/#{ slug(department) }#{ '/office/%s' % office_id if office_id else '' }"
+                           t-attf-class="nav-link#{' active' if department_id and department_id.id == department.id else ''}">
+                            <span t-field="department.name"/>
+                        </a>
+                    </li>
+                </t>
+            </ul>
+        </xpath>
+        <xpath expr="//div[@id='jobs_grid_left']" position="attributes">
+            <attribute name="class">col-lg-3</attribute>
+        </xpath>
+        <xpath expr="//div[@id='jobs_grid']" position="attributes">
+            <attribute name="class">col-lg-9</attribute>
+        </xpath>
+    </template>
 
-<template id="website_hr_recuitment_assets_editor" name="Website HR Recruitment Assets Editor" inherit_id="website.assets_editor">
-    <xpath expr="." position="inside">
-        <script type="text/javascript" src="/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.js"></script>
-    </xpath>
-</template>
+    <template id="job_offices" inherit_id="website_hr_recruitment.index" active="False" customize_show="True"
+              name="Filter by Offices">
+        <xpath expr="//div[@id='jobs_grid_left']" position="inside">
+            <ul class="nav nav-pills flex-column mb32">
+                <li class="nav-item">
+                    <a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }#{ '/department/%s' % slug(department_id) if department_id else '' }"
+                       t-attf-class="nav-link#{'' if office_id else ' active'}">All Offices
+                    </a>
+                </li>
+                <t t-foreach="offices" t-as="thisoffice">
+                    <li class="nav-item">
+                        <a t-attf-href="/jobs#{ '/country/%s' % slug(country_id) if country_id else '' }#{ '/department/%s' % slug(department_id) if department_id else '' }/office/#{ thisoffice.id }"
+                           t-attf-class="nav-link#{' active' if office_id == thisoffice.id else ''}">
+                            <span t-field="thisoffice.city"/>
+                            <t t-if="thisoffice.country_id">,
+                                <span t-field="thisoffice.country_id.name"/>
+                            </t>
+                        </a>
+                    </li>
+                </t>
+            </ul>
+        </xpath>
+        <xpath expr="//div[@id='jobs_grid_left']" position="attributes">
+            <attribute name="class">col-lg-3</attribute>
+        </xpath>
+        <xpath expr="//div[@id='jobs_grid']" position="attributes">
+            <attribute name="class">col-lg-9</attribute>
+        </xpath>
+    </template>
 
-<template id="assets_tests" name="Website HR Recruitment Assets Tests" inherit_id="web.assets_tests">
-    <xpath expr="." position="inside">
-        <script type="text/javascript" src="/website_hr_recruitment/static/tests/tours/website_hr_recruitment.js"></script>
-    </xpath>
-</template>
+    <!-- User Navbar -->
+    <template id="user_navbar_inherit_website_hr_recruitment" inherit_id="website.user_navbar">
+        <xpath expr="//div[@id='o_new_content_menu_choices']//div[@name='module_website_hr_recruitment']/a"
+               position="attributes">
+            <attribute name="href">/jobs/add</attribute>
+        </xpath>
+        <xpath expr="//div[@id='o_new_content_menu_choices']//div[@name='module_website_hr_recruitment']"
+               position="attributes">
+            <attribute name="name"/>
+            <attribute name="t-att-data-module-id"/>
+            <attribute name="t-att-data-module-shortdesc"/>
+            <attribute name="groups">hr_recruitment.group_hr_recruitment_manager</attribute>
+        </xpath>
+    </template>
+
+    <template id="website_hr_recuitment_assets_editor" name="Website HR Recruitment Assets Editor"
+              inherit_id="website.assets_editor">
+        <xpath expr="." position="inside">
+            <script type="text/javascript"
+                    src="/website_hr_recruitment/static/src/js/website_hr_recruitment_editor.js"></script>
+        </xpath>
+    </template>
+
+    <template id="assets_tests" name="Website HR Recruitment Assets Tests" inherit_id="web.assets_tests">
+        <xpath expr="." position="inside">
+            <script type="text/javascript"
+                    src="/website_hr_recruitment/static/tests/tours/website_hr_recruitment.js"></script>
+        </xpath>
+    </template>
 
 </odoo>

@@ -21,7 +21,6 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base',
-                'website_hr_recruitment',
                 'website',
                 'website_partner',
                 'hr_recruitment',
@@ -40,7 +39,10 @@
         'views/res_partner_inherit.xml',
         'report/cv_application.xml',
         'browser/add_lib_fontend.xml',
+        'browser/index.xml',
+        # 'browser/listing_left.xml',
 
+        'security/website_hr_recruitment_security.xml',
         'data/config_data.xml',
         'views/website_hr_recruitment_templates.xml',
         'views/hr_recruitment_views.xml',

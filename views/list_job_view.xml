@@ -4,9 +4,9 @@
 
 <!--        Lĩnh vực làm việc-->
 
-        <record model="ir.ui.view" id="jobnow_list_job_list">
+        <record model="ir.ui.view" id="hr_list_job_list">
           <field name="name">Danh sách ngành nghề</field>
-          <field name="model">jobnow.list_job</field>
+          <field name="model">hr.list_job</field>
           <field name="arch" type="xml">
             <tree string="List job" create="true" editable="bottom" delete="true">
               <field name="name"/>
@@ -14,17 +14,17 @@
           </field>
         </record>
 
-        <record model="ir.actions.act_window" id="jobnow_list_job">
+        <record model="ir.actions.act_window" id="hr_list_job">
           <field name="name">Lĩnh vực</field>
-          <field name="res_model">jobnow.list_job</field>
+          <field name="res_model">hr.list_job</field>
           <field name="view_mode">tree</field>
         </record>
 
 <!--        Cấp bậc làm việc-->
 
-        <record model="ir.ui.view" id="jobnow_work_level_list">
+        <record model="ir.ui.view" id="hr_work_level_list">
           <field name="name">Danh sách cấp bậc</field>
-          <field name="model">jobnow.work_level</field>
+          <field name="model">hr.work_level</field>
           <field name="arch" type="xml">
             <tree string="List work level" create="true" editable="bottom" delete="true">
               <field name="name"/>
@@ -32,17 +32,17 @@
           </field>
         </record>
 
-        <record model="ir.actions.act_window" id="jobnow_work_level">
+        <record model="ir.actions.act_window" id="hr_work_level">
           <field name="name">Cấp bậc</field>
-          <field name="res_model">jobnow.work_level</field>
+          <field name="res_model">hr.work_level</field>
           <field name="view_mode">tree</field>
         </record>
 
 <!--        Loại hình công việc-->
 
-        <record model="ir.ui.view" id="jobnow_type_of_work_list">
+        <record model="ir.ui.view" id="hr_type_of_work_list">
           <field name="name">Danh sách loại hình công việc</field>
-          <field name="model">jobnow.type_of_work</field>
+          <field name="model">hr.type_of_work</field>
           <field name="arch" type="xml">
             <tree string="Type of work" create="true" editable="bottom" delete="true">
               <field name="name"/>
@@ -50,17 +50,17 @@
           </field>
         </record>
 
-        <record model="ir.actions.act_window" id="jobnow_type_of_work">
+        <record model="ir.actions.act_window" id="hr_type_of_work">
           <field name="name">Loại hình công việc</field>
-          <field name="res_model">jobnow.type_of_work</field>
+          <field name="res_model">hr.type_of_work</field>
           <field name="view_mode">tree</field>
         </record>
 
 <!--        Kinh nghiệm -->
 
-        <record model="ir.ui.view" id="jobnow_experience_list">
+        <record model="ir.ui.view" id="hr_experience_list">
           <field name="name">Danh sách kinh nghiệm</field>
-          <field name="model">jobnow.experience</field>
+          <field name="model">hr.experience</field>
           <field name="arch" type="xml">
             <tree string="List of experience" create="true" editable="bottom" delete="true">
               <field name="name"/>
@@ -68,17 +68,17 @@
           </field>
         </record>
 
-        <record model="ir.actions.act_window" id="jobnow_experience">
+        <record model="ir.actions.act_window" id="hr_experience">
           <field name="name">Kinh nghiệm</field>
-          <field name="res_model">jobnow.experience</field>
+          <field name="res_model">hr.experience</field>
           <field name="view_mode">tree</field>
         </record>
 
 <!--        Trình độ -->
 
-        <record model="ir.ui.view" id="jobnow_academic_level_list">
+        <record model="ir.ui.view" id="hr_academic_level_list">
           <field name="name">Danh sách trình độ</field>
-          <field name="model">jobnow.academic_level</field>
+          <field name="model">hr.academic_level</field>
           <field name="arch" type="xml">
             <tree string="Academic level work" create="true" editable="bottom" delete="true">
               <field name="name"/>
@@ -86,17 +86,17 @@
           </field>
         </record>
 
-        <record model="ir.actions.act_window" id="jobnow_academic_level">
+        <record model="ir.actions.act_window" id="hr_academic_level">
           <field name="name">Trình độ</field>
-          <field name="res_model">jobnow.academic_level</field>
+          <field name="res_model">hr.academic_level</field>
           <field name="view_mode">tree</field>
         </record>
 
 <!--        Mức lương-->
 
-        <record model="ir.ui.view" id="jobnow_wage_list">
+        <record model="ir.ui.view" id="hr_wage_list">
           <field name="name">Danh sách mức lương</field>
-          <field name="model">jobnow.wage</field>
+          <field name="model">hr.wage</field>
           <field name="arch" type="xml">
             <tree string="List wage" create="true" editable="bottom" delete="true">
               <field name="name"/>
@@ -104,17 +104,17 @@
           </field>
         </record>
 
-        <record model="ir.actions.act_window" id="jobnow_wage">
+        <record model="ir.actions.act_window" id="hr_wage">
           <field name="name">Mức lương</field>
-          <field name="res_model">jobnow.wage</field>
+          <field name="res_model">hr.wage</field>
           <field name="view_mode">tree</field>
         </record>
 
-        <menuitem name="Lĩnh vực" id="menu_jobnow_list_job" action="jobnow_list_job" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="11"/>
-        <menuitem name="Cấp bậc" id="menu_jobnow_work_level" action="jobnow_work_level" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="12"/>
-        <menuitem name="Loại hình công việc" id="menu_jobnow_type_of_work" action="jobnow_type_of_work" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="13"/>
-        <menuitem name="Kinh nghiệm làm việc" id="menu_jobnow_experience" action="jobnow_experience" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="14"/>
-        <menuitem name="Trình độ học vấn" id="menu_jobnow_academic_level" action="jobnow_academic_level" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="15"/>
-        <menuitem name="Mức lương" id="menu_jobnow_wage" action="jobnow_wage" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="16"/>
+        <menuitem name="Lĩnh vực" id="menu_hr_list_job" action="hr_list_job" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="11"/>
+        <menuitem name="Cấp bậc" id="menu_hr_work_level" action="hr_work_level" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="12"/>
+        <menuitem name="Loại hình công việc" id="menu_hr_type_of_work" action="hr_type_of_work" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="13"/>
+        <menuitem name="Kinh nghiệm làm việc" id="menu_hr_experience" action="hr_experience" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="14"/>
+        <menuitem name="Trình độ học vấn" id="menu_hr_academic_level" action="hr_academic_level" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="15"/>
+        <menuitem name="Mức lương" id="menu_hr_wage" action="hr_wage" parent="hr_recruitment.menu_hr_recruitment_configuration" sequence="16"/>
     </data>
 </odoo>

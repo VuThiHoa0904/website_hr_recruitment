@@ -1,0 +1,1044 @@
+//header-top
+.seach-button{
+    border: none;
+    background-color: white;
+    background-image: url(/web/image/17630/icons8-search-24.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    position: absolute;
+    right: 398px;
+    top: 8px;
+}
+#wrapwrap header .navbar .navbar-nav .nav-item > .dropdown-menu {
+    padding: 0;
+    min-width: 200px;
+    box-shadow: none;
+    background-color: #EFEEEA !important;
+    border-color: #EFEEEA;
+}
+a:hover{
+    text-decoration: none;
+    color: #458C5C;
+}
+a{
+    color: #4A4A4A;
+}
+#contact{
+    padding-right: 30px;
+}
+#preheader .container .form-inline {
+    width: 280px;
+}
+form .form-control{
+    position: relative;
+    // width: 200px;
+}
+.fa-search{
+    position: absolute;
+    right: 395px;
+    color: #68B581;
+}
+//Container job
+.container-fluid{
+    width:97%;
+}
+.oe_structure section div div div .text-mute{
+    font-famnily: "Lora";
+}
+.navbar-light {
+    background-color: #EFEEEA !important;
+}
+#wrapwrap header .navbar .navbar-nav .nav-item .nav-link{
+    font-size: 14px;
+    color: #4A4A4A;
+}
+.list-unstyled h5{
+    font-family: Roboto;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4A;
+    margin-bottom: 6px;
+}
+.list-unstyled .row .col-md-4{
+    margin-bottom: 20px;
+}
+.media-body .infor-job{
+    font-size: 14px;
+    font-weight: 300;
+    color: #4A4A4A;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin-bottom: .6rem;
+}
+//footer
+.o_footer{
+    background-color: #EFEEEA !important;
+    color: #4A4A4A;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.67;
+    color: #4A4A4A;
+}
+.s_text_block .container .row div h5{
+    font-size: 14px;
+    font-weight: 700;
+    color: #4A4A4A;
+    text-transform: uppercase;
+}
+// trang chu
+#wrapwrap header .navbar .navbar-nav .nav-item > .dropdown-menu .dropdown-item::before{
+    content: none !important;
+}
+.s_hr{
+    color: #68B581;
+}
+.aplly_job{
+        margin-left: 24%;
+    }
+.flash-job .info-wrapper .job-info .job-title{
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: #4A4A4A;
+    font-family: Roboto;
+    font-weight: 700;
+}
+.flash-job .info-wrapper .extra-info{
+        margin-top: 16px;
+}
+.fa-map-marker, .fa-usd{
+    color: #716B6B;
+}
+.extra-info .location .distance{
+    font-weight: 700;
+    font-size: 14px;
+}
+.extra-info .salary .salary-level{
+    color: #4A4A4A;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+}
+.info-wrapper .slot-number-wrapper{
+    width: 95%;
+    background-color: #68B581;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    height: 17px;
+    border-radius: .9rem;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 6px;
+    /* margin-right: 2.8rem; */
+    display: -ms-flexbox;
+    display: flex;
+}
+.slot-number-wrapper .text, .slot-number-wrapper .number{
+    padding-left: 4px;
+}
+.no-gutters .s_images_row_overlay{
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    border-right: .5px solid #E3E3E3;
+}
+.s_images_row{
+    box-shadow: 0px 5px 20px 0px rgba(33, 33, 33, 0.1);
+}
+// .no-gutters .s_images_row_overlay:nth-child(6n){
+//     border: none;
+// }
+.s_col_no_bgcolor h4{
+    font-size: 16px;
+    font-weight: 700;
+}
+.s_col_no_bgcolor .s_features_grid_content p{
+    font-size: 15px;
+    font-weight: 300;
+    color: #4A4A4A;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(50vw - 32rem);
+    overflow: hidden;
+    margin-bottom: .6rem;
+}
+//Viec lam tuyen gap
+.s_features_grid{
+    box-shadow: 0px 5px 20px 0px rgba(33, 33, 33, 0.1);
+}
+.job-hurry{
+    position:relative;
+}
+.job-hurry .hot-right{
+    padding: .3rem .8rem;
+    border-radius: .8rem;
+    background-color: red;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
+.s_features_grid .s_col_no_bgcolor{
+    display: flex;
+    // border-bottom: .5px solid #E3E3E3;
+    border-right: .5px solid #E3E3E3;
+    border-bottom: .5px solid #E3E3E3;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.s_features_grid .s_col_no_bgcolor:nth-child(3n){
+    border-right: none;
+}
+//Viec lam hap dan
+.slide-item-wrapper:nth-child(2n) {
+    border-left: .5px solid #E3E3E3;
+}
+.slide-item-wrapper{
+    border-bottom: .5px solid #E3E3E3;
+    padding: 1.6rem 0;
+    width: 100%;
+    position: relative;
+}
+.job-item-wrapper .company-logo img {
+    width: 100px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.info-wrapper{
+    padding-top: 15px;
+}
+.viec-lam-hap-dan .info-wrapper {
+    padding-top: 1px;
+}
+.info-wrapper .job-info .job-title{
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+    text-align: left;
+}
+.viec-lam-hap-dan .info-wrapper .job-info .company-name{
+    font-size: 15px;
+    font-weight: 300;
+    color: #4A4A4A;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(50vw - 32rem);
+    overflow: hidden;
+    margin-bottom: .6rem;
+}
+.viec-lam-hap-dan .location{
+    margin-bottom: 4px;
+}
+.flash-job .location .distance,.viec-lam-hap-dan .location .distance{
+    color: #68B581;
+}
+//nha tuyen dung
+.card .card-body img{
+    padding-bottom: 10px;
+    margin-left: 25%;
+}
+.card-text{
+    font-weight:300;
+}
+.s_col_no_bgcolor h4{
+    margin-bottom: 0px;
+}
+//end trang chu
+//detail-job
+.js_hr_recruitment .img-title img{
+    width: 8.2rem;
+    height: 8.2rem;
+    min-width: 8.2rem;
+    min-height: 8.2rem;
+    border-radius: 6.1rem;
+    border: 1px solid #E0E0E0;
+}
+.js_hr_recruitment .job-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #212529;
+    // padding: 15px 0;
+    margin-left: 15px;
+    padding-bottom: 22px;
+}
+.js_hr_recruitment .infor-job{
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+    color: #212529;
+}
+.js_hr_recruitment .job-address{
+    display: flex;
+    font-size: 15px;
+    font-weight: 700;
+    color: #68B581;
+}
+.js_hr_recruitment .job-info .info-line{
+    display: flex;
+    font-size: 15px;
+    font-weight: 300;
+    color: #212529;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+.js_hr_recruitment .job-info .info-line .value{
+    font-weight: 700;
+}
+.js_hr_recruitment .job-info .info-line .separator{
+    margin: 0 3px;
+}
+.detail-title-info-job .container-fluid{
+    box-shadow: 0px 5px 20px 0px rgba(33, 33, 33, 0.1);
+    padding: 25px;
+    margin-top: 15px;
+}
+.detail-content-info-job .col:first-child {
+    margin-right: 1.2rem;
+}
+.detail-content-info-job .col {
+    -ms-flex: 1 1;
+    flex: 1 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    box-shadow: 0px 5px 20px 0px rgba(33, 33, 33, 0.1);
+}
+.detail-content-info-job .col .block-wrapper{
+    background-color: #fff;
+    /* -webkit-box-shadow: 1px 1px 10px 0 hsla(0,0%,86%,.5); */
+    /* box-shadow: 1px 1px 10px 0 hsla(0,0%,86%,.5); */
+    padding: 1.5rem 3rem;
+    /* margin-bottom: 1.2rem; */
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 15px;
+}
+.detail-content-info-job .col .block-wrapper .block-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #68B581;
+    margin-bottom: 1rem;
+}
+.detail-content-info-job .company-introduction .section-title{
+    font-size: 16px;
+    font-weight: 700;
+}
+.detail-content-info-job .company-introduction .section-row{
+    // display: flex;
+    margin-bottom:1rem;
+}
+.detail-content-info-job .company-introduction .section-col{
+    flex: 1 1;
+}
+.detail-content-info-job .company-introduction .section-col .info-line{
+    margin-top: 1.6rem;
+}
+.detail-content-info-job .company-introduction .section-col .info-line .info-value{
+    font-weight: 700;
+    color: #4A4A4A;
+}
+//trang nop ho so ung vien
+form .form-control {
+    position: relative;
+    // width: 550px;
+}
+.col-form-label {
+    color: #4A4A4A;
+    font-family: Roboto;
+    font-size: 15px;
+}
+::placeholder {
+  color: #AFAD94 !important;
+  font-size: 14px;
+  font-family: Roboto;
+}
+
+.avatar-wrapper{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: 50px auto;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 1px 1px 15px -5px black;
+	transition: all .3s ease;
+	&:hover{
+		transform: scale(1.05);
+		cursor: pointer;
+	}
+	&:hover .profile-pic{
+		opacity: .5;
+	}
+	.profile-pic {
+    height: 100%;
+		width: 100%;
+		transition: all .3s ease;
+		&:after{
+			font-family: FontAwesome;
+			content: "\f007";
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			font-size: 190px;
+			background: #ecf0f1;
+			color: #34495e;
+			text-align: center;
+		}
+	}
+	.upload-button {
+		position: absolute;
+		top: 0; left: 0;
+		height: 100%;
+		width: 100%;
+		.fa-arrow-circle-up{
+			position: absolute;
+			font-size: 234px;
+			top: -17px;
+			left: 0;
+			text-align: center;
+			opacity: 0;
+			transition: all .3s ease;
+			color: #34495e;
+		}
+		&:hover .fa-arrow-circle-up{
+			opacity: .9;
+		}
+	}
+}
+
+
+
+
+
+//trang Lien he
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+    font-weight: 300;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    font-weight: 300;
+}
+//Trang blog
+.website_blog  .o_wblog_normalize_font {
+    font-size: 15px;
+    line-height: 1.45;
+    font-family: Roboto;
+    font-weight: 300;
+}
+.website_blog .o_wblog_read {
+    width: 1140px;
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .aplly_job{
+        margin-left: 0%;
+    }
+    .seach-button {
+        right: 387px;
+    }
+
+    .job-hurry .hot-right {
+        font-size: 0.5rem;
+        top: 1rem;
+        right: 0.5rem;
+    }
+
+    .viec-lam-hap-dan .job-info {
+        padding-left: 40px;
+    }
+
+    .viec-lam-hap-dan .info-wrapper .job-info .company-name {
+        display: contents;
+    }
+
+    .job-hurry img {
+        width: 72px;
+        height: auto;
+        margin-top: 10%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+    .seach-button {
+        display: none;
+    }
+
+    #preheader .container .form-inline {
+        width: 335px;
+    }
+    .flash-job .location, .flash-job .salary
+    {
+        text-align: center;
+    }
+
+    // Viec lam tuyen gap
+    .job-hurry .extra-info .location{
+        margin-right: auto;
+    }
+    .s_col_no_bgcolor h4{
+        text-align: center;
+    }
+    .job-hurry img{
+        width: 43%;
+        margin-bottom: 8px;
+        margin-left: 70px;
+    }
+    .job-hurry .extra-info .col-xs-6{
+        width: 40%;
+    }
+
+    .viec-lam-hap-dan .info-wrapper .extra-info{
+        text-align: center;
+    }
+    .viec-lam-hap-dan .info-wrapper .job-info .job-title{
+        text-align: center;
+    }
+    .viec-lam-hap-dan .info-wrapper .job-info .company-name
+    {
+        width: auto;
+        text-align: center;
+    }
+    .slide-item-wrapper:nth-child(2n) {
+     border-left: none;
+    }
+    .s_features_grid .s_col_no_bgcolor{
+        border-right: none;
+    }
+    //nop cv
+    .aplly_job{
+        margin-left: 0%;
+    }
+    .no-gutters{
+        display: none;
+    }
+}
+
+// website_form ==============================
+// Radio buttons and checkboxes flex layout
+.o_website_form_flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.o_website_form_flex_item {
+    // col-lg-4
+    flex-basis: 20%;
+
+    // col-md-6
+    @include media-breakpoint-down(md) {
+        flex-basis: 50%;
+    }
+
+    // col-12
+    @include media-breakpoint-down(sm) {
+        flex-basis: 100%;
+    }
+}
+
+// Hidden field is only partially hidden in editor
+.o_website_form_field_hidden {
+    display: none;
+}
+
+.editor_enable .o_website_form_field_hidden {
+    display: flex;
+    opacity: 0.5;
+}
+
+// Select inputs do not trigger the default browser behavior
+// Since we use a custom editable element
+.editor_enable .s_website_form .form-field select {
+    pointer-events: none;
+}
+
+// Required fields have a star which is not part of the field label
+.o_website_form_required, .o_website_form_required_custom {
+    .col-form-label:after {
+        content: ' *';
+    }
+}
+
+// Quickfix to display the editable select as a single big field
+#editable_select.form-control {
+    height: 100%;
+}
+
+// Fix for firefox browse button which is too big for Bootstrap form-field
+// http://stackoverflow.com/questions/22049739/fix-for-firefox-file-input-using-bootstrap-3-1
+.form-field input[type=file].form-control {
+    height: 100%;
+}
+
+
+// website_blog==========================
+
+// ======= VARIABLES =======
+$o-wblog-read-width: 1140px;
+$o-wblog-read-container-sidebar-width :900px;
+$o-wblog-loader-size: 50px;
+
+$o-wblog-title-sizes-variants: (
+    tiny: (
+        title: $display4-size*0.6,
+        subtitle: $lead-font-size
+    ),
+    small: (
+        title: $display4-size*0.75,
+        subtitle: $lead-font-size
+    ),
+    big: (
+        title: $display3-size,
+        subtitle: $lead-font-size*1.25
+    ),
+    huge: (
+        title: $display2-size,
+        subtitle: $lead-font-size*1.5
+    ),
+    hero: (
+        title: $display1-size,
+        subtitle: $lead-font-size*1.75
+    )
+) !default;
+
+// ======= ANIMATIONS =======
+// Attention keeper for the "scroll down" top-banner button
+@keyframes o-wblog-anim-heart {
+    0%, 14%, 35% { transform: scale(1); }
+    7%, 21% {
+        transform: scale(1.3);
+        background-color: rgba(theme-color('primary'), 0.8);
+    }
+}
+
+// Generic fade-in
+@keyframes o-wblog-fade-In {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes o-wblog-loader {
+    0%, 100% {
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(1800deg);
+        animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+        transform: rotateY(3600deg);
+    }
+}
+
+
+// ======== MIXINS =========
+// Create easing-linear-gradients. Compared to the standards liner-gradients
+// these are smoother and blends into their context increasing readability when
+// acts as background for text placed over images.
+// based on: https://css-tricks.com/easing-linear-gradients/
+@mixin o-wbblog-scrim-gradient($colorFrom, $colorTo) {
+    $scrimStops: 0% 0%, 26.2% 19%, 45.9% 34%, 61.8% 47%, 72.2% 56.5%, 80.6% 65%, 87.4% 73%, 92.5% 80.2%, 95.8% 86.1%, 97.9% 91%, 99.2% 95.2%, 99.8% 98.2%, 100% 100%;
+    $stops: ();
+    @each $scrimStop in $scrimStops {
+        $stops: append($stops, mix($colorTo, $colorFrom, nth($scrimStop, 1)) nth($scrimStop, 2), comma)
+    }
+
+    background-image: linear-gradient(#{$stops});
+}
+
+//------------------------------------------------------------------------------
+// Website Blog
+//------------------------------------------------------------------------------
+.website_blog {
+    .css_website_mail {
+        .o_has_error {
+            border-color: red;
+        }
+        .css_nav_month {
+            display: none;
+            &:first-of-type {
+                display: block;
+            }
+        }
+    }
+
+    .o_wblog_page_cards_bg {
+        // To be applied to the main container when 'card design' option is
+        // enabled. Provide a slight darker bg that will blend the background
+        // color chosen by the user, visually increasing the contrast in case of
+        // brights (or white) backgrounds.
+        // It shouldn't be noticeable on dark backgrounds.
+        background-color: rgba(black, 0.005);
+    }
+
+    .o_wblog_read {
+        max-width: $o-wblog-read-width;
+    }
+
+    .o_wblog_read_with_sidebar {
+        max-width: $o-wblog-read-container-sidebar-width;
+    }
+
+    // This option class is assigned to the post's content using the "Customize"
+    // menu. The aim is to be able to write simple articles on the fly,
+    // achieving a good design without being forced to use snippets.
+    .o_wblog_read_text {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 300;
+
+        p, ul, ol {
+            margin-bottom: 1.55em;
+        }
+
+        li {
+            margin-bottom: 1em;
+        }
+
+        .lead {
+            font-size: 26px;
+            line-height: 34px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .o_wblog_author_avatar {
+        width: 1.2em;
+        height: 1.2em;
+        max-width: none;
+        object-fit: cover;
+    }
+
+    .o_wblog_author_avatar_date {
+        // Resize in order to double the current font-size and accommodate
+        // two text lines, name and date.
+        width: 2em;
+        height: 2em;
+        max-width: none;
+        object-fit: cover;
+    }
+
+    .o_wblog_social_links > a {
+        @include size(3em);
+        > i {
+            font-size: 1.3em;
+        }
+    }
+
+    // Blog Post Page
+    // ==============================================
+    #o_wblog_post_content {
+        min-height: 350px !important;
+
+        a.oe_mail_expand:after {
+            content: " →";
+        }
+        a.oe_mail_expand {
+            font-weight: bold;
+        }
+    }
+
+    #o_wblog_post_comments {
+        .o_portal_chatter > hr {
+            display: none;
+        }
+    }
+
+    // Blog Post Page Cover
+    // ==============================================
+    .o_wblog_post_page_cover {
+        // By default (no image defined), inner filters elements are hidden.
+        .o_record_cover_component {
+            display: none;
+        }
+
+        // If a cover image is defined, show filters + adapt inner typography
+        &.o_record_has_cover {
+            .o_record_cover_image:after {
+                content: "";
+                display: block;
+                @include o-position-absolute(0,0,50%,0);
+                @include o-wbblog-scrim-gradient(rgba(black, 0.5), transparent);
+            }
+            .o_record_cover_component {
+                display: block;
+            }
+
+            .o_wblog_post_title {
+                color: white;
+            }
+
+            #o_wblog_post_content_jump {
+                @include size($o-wblog-loader-size);
+                display: none;
+                background-color: rgba(black, 0.5);
+
+                &:hover {
+                    background-color: rgba(black, 0.7);
+                }
+            }
+
+            // Cover sizes
+            // ==============================================
+            &.cover_full {
+                min-height: 600px;
+                min-height: 100vh;
+            }
+
+            &.cover_mid {
+                min-height: 400px;
+                min-height: 55vh;
+            }
+
+            &.cover_full, &.cover_mid {
+                #o_wblog_post_content_jump {
+                    display: flex;
+                    animation: o-wblog-anim-heart 2.6s ease-in-out 1s infinite;
+
+                    &:hover {
+                        animation-iteration-count: 1;
+                    }
+                }
+            }
+
+            &.cover_auto {
+                padding: 3rem 0;
+                // The actual height will always be 'auto'. The following
+                // min-height rule is set to trigger the page transition only.
+                min-height: 1px;
+            }
+
+            // "Regular Cover" design sizes
+            // ==============================================
+            &.o_wblog_post_page_cover_regular {
+                .o_record_cover_image:after {
+                    visibility: hidden;
+                }
+
+                &.cover_full {
+                    min-height: 350px;
+                }
+
+                &.cover_mid {
+                    min-height: 250px;
+                }
+
+                &.cover_auto {
+                    min-height: 150px;
+                    padding: 0;
+                }
+            }
+        }
+
+    }
+
+    // Blog Post Specific
+    // ==============================================
+    .o_wblog_post_title {
+        #o_wblog_post_name {
+            font-weight: $display4-weight;
+            line-height: $display-line-height;
+            // Default font-size.
+            @include font-size($display4-size);
+        }
+
+        #o_wblog_post_subtitle {
+            font-weight: $lead-font-weight;
+            // Default font-size.
+            @include font-size($lead-font-size);
+        }
+    }
+
+    // Size variants
+    @each $size, $map in $o-wblog-title-sizes-variants {
+        .o_record_cover_font_#{$size} .o_wblog_post_title {
+            #o_wblog_post_name {
+                @include font-size(map-get($map, title));
+            }
+            #o_wblog_post_subtitle {
+                @include font-size(map-get($map, subtitle));
+            }
+        }
+    }
+
+    // Refine multi-lines titles when using 'regular' cover
+    .o_wblog_regular_cover_container #o_wblog_post_name {
+        line-height: 1;
+        padding-bottom: 0.5rem;
+    }
+
+    .o_wblog_post_page_cover_footer {
+        min-height: 33vh;
+        // Emulate native jQuery 'swing' easing to match js code
+        transition: all 0.3s cubic-bezier(.02, .01, .47, 1);
+    }
+
+    #o_wblog_next_container {
+        background-color: $body-bg;
+        cursor: pointer;
+
+        .o_wblog_next_loader {
+            transform: translateZ(1px);
+
+            div {
+                @include size($o-wblog-loader-size);
+                margin-top: $o-wblog-loader-size * -2;
+                background: rgba(black, 0.15);
+                animation: o-wblog-loader 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+            }
+        }
+
+        .o_wblog_next_fake_btn {
+            height: $o-wblog-loader-size;
+        }
+    }
+
+    #o_wblog_post_main.o_wblog_post_main_transition {
+        animation: o-wblog-fade-In 1s cubic-bezier(.02, .01, .47, 1);
+    }
+
+    // Blog Index Pages
+    // ==============================================
+    #o_wblog_posts_loop {
+        .o_record_cover_container {
+            box-shadow: inset 0 0 0 1px rgba(white, 0.3);
+            background: rgba(black, 0.1);
+
+            padding-top: 33%;
+            height: auto!important;
+
+            &:hover .o_record_cover_image {
+                opacity: 0.8;
+            }
+        }
+
+        .o_wblog_normalize_font {
+            // normalize fonts
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        .o_wblog_post_list_author {
+            @include o-wbblog-scrim-gradient(transparent, rgba(black, 0.5));
+        }
+
+        &.o_wblog_list_view {
+            .o_record_cover_container {
+                padding-top: 20%;
+            }
+            .o_wblog_post_cover_nocard .o_record_cover_container {
+                padding-top: 33%;
+            }
+        }
+
+    }
+
+    //  Editor Helpers
+    // ==============================================
+    body.editor_enable & {
+        // Make empty covers visible in edit mode
+        .o_record_cover_container.o_wblog_post_page_cover:not(.o_record_has_cover) {
+            background-color: $gray-100;
+            padding: 30px 0;
+            border: 1px dashed $gray-500;
+        }
+
+        // Hide the big "DRAG BUILDING BLOCKS HERE" box when inside a sidebar.
+        // The purple lines are enough to help the user dropping snippets.
+        #o_wblog_sidebar .oe_structure:empty {
+            display: none;
+        }
+    }
+}
+
+
+//------------------------------------------------------------------------------
+// Latest posts snippets
+//------------------------------------------------------------------------------
+.s_latest_posts, .s_latest_posts_big_picture {
+    .s_latest_posts_loader {
+        @include o-position-absolute(0, 0, 0, 0);
+        transform: translateZ(1px);
+
+        > div {
+            animation: o-wblog-loader 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+            max: {width: 30px; height: 30px;}
+        }
+    }
+
+    .s_latest_posts_post_title  {
+        font-weight: $headings-font-weight;
+        // Tweek line-height to help fit multi-line titles.
+        line-height: 1;
+    }
+
+    .s_latest_posts_post_subtitle {
+        font-size: 1em;
+    }
+}
+
+.s_latest_posts {
+    // Set sizes relative to the container font-size.
+    // (handle parents with, for example, '.small' or '.h1' classes)
+    .s_latest_posts_post_cover {
+        @include size(3.5em);
+        max: {width: 85px; height: 85px}
+    }
+
+    .s_latest_posts_post_title  {
+        font-size: 1.25em;
+    }
+}
+
+.s_latest_posts_big_picture {
+    .s_latest_posts_post {
+        min-height: 150px;
+
+        figcaption {
+            position: relative;
+            justify-content: center;
+        }
+
+        .s_latest_posts_post_cover {
+            min-height: 100%;
+
+            .o_record_cover_container {
+                top: 0;
+            }
+        }
+
+        .s_latest_posts_post_title  {
+            @include font-size($h3-font-size);
+            margin-bottom: 0.5em;
+            word-spacing: -0.15em;
+        }
+
+        @include s-latest-posts-figure-hook;
+    }
+
+    .js_get_posts {
+        @include s-latest-posts-js-get-posts-hook;
+    }
+}

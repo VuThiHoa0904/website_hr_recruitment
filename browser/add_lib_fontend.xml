@@ -1,38 +1,450 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Slides_Frontend ">
-            <xpath expr="//link[last()]" position="after">
-<!--                <link rel="stylesheet" type="text/scss" href="/jobnow/static/src/scss/website_frontend_inherit.scss" t-ignore="true"/>-->
-                <link rel="stylesheet" type="text/css" href="/jobnow/static/src/js/slick/slick.css" t-ignore="true"/>
-                <link rel="stylesheet" type="text/css" href="/jobnow/static/src/js/slick/slick-theme.css"/>
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Website Recruitment">
+            <xpath expr=".">
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/js/slick/slick.css"
+                      t-ignore="true"/>
+                <link rel="stylesheet" type="text/css"
+                      href="/website_hr_recruitment/static/src/js/slick/slick-theme.css"/>
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/animate.css"/>
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/bootstrap.css"/>
+                <link rel="stylesheet" type="text/css" href=
+                        "/website_hr_recruitment/static/src/css/font-awesome.css"/>
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/fonts.css"/>
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/reset.css"/>
+                <link rel="stylesheet" type="text/css" href=
+                        "/website_hr_recruitment/static/src/css/owl.carousel.css"/>
+                <link rel="stylesheet" type="text/css" href=
+                        "/website_hr_recruitment/static/src/css/owl.theme.default.css"/>
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/flaticon.css"/>
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/style.css"/>
+                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/style_II.css"/>
+                <link rel="stylesheet" type="text/css" href=
+                        "/website_hr_recruitment/static/src/css/responsive2.css"/><!-- favicon links -->
+                <!--                <link rel="shortcut icon" type="image/png" href=-->
+                <!--                        "images/header/favicon.ico"/>-->
+                <!--                <link rel="stylesheet" type="text/css" href="/website_hr_recruitment/static/src/css/user_custom_css.css"/>-->
             </xpath>
             <xpath expr="//script[last()]" position="after">
-<!--                <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
-<!--                <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
-<!--                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-<!--                <script type="text/javascript" src="/web/static/lib/jquery/jquery.js" />-->
-<!--                <script type="text/javascript" t-attf-src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/>-->
-                <script type="text/javascript" src="/jobnow/static/src/js/slick/slick.min.js"></script>
-<!--                <script type="text/javascript" src="/jobnow/static/src/js/ckeditor.js"></script>-->
+                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/slick/slick.min.js"></script>
+                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/jquery_min.js"></script>
+                <!--                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/bootstrap.js"></script>-->
+                <!--                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/jquery.menu-aim.js"></script>-->
+                <!--                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/jquery.countTo.js"></script>-->
+                <!--                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/jquery.inview.min.js"></script>-->
+                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/owl.carousel.js"></script>
+                <!--                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/modernizr.js"></script>-->
+                <!--                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/jquery.magnific-popup.js"></script>-->
+                <script type="text/javascript" src="/website_hr_recruitment/static/src/js/custom.js"></script>
             </xpath>
         </template>
-<!--        <template id="hr_recruitment_form_extend" inherit_id="website_hr_recruitment.apply" name="Apply Job Extend">-->
-<!--            <xpath expr="//div[hasclass('o_website_form_required_custom')]" position="after">-->
-<!--&lt;!&ndash;                <div class="form-group row form-field">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="col-lg-3 col-md-4 text-left">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <label class="col-form-label" for="description">Giới tính </label>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="col-lg-7 col-md-8">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <textarea class="form-control o_website_form_input" name="abc"></textarea>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--                <script type="text/javascript">-->
-<!--&lt;!&ndash;                    CKEDITOR.replace("abc");&ndash;&gt;-->
-<!--&lt;!&ndash;                    var textarea = document.body.appendChild( document.createElement( 'textarea' ) );&ndash;&gt;-->
-<!--&lt;!&ndash;                    CKEDITOR.replace( textarea );&ndash;&gt;-->
-<!--                </script>-->
-<!--            </xpath>-->
-<!--        </template>-->
+        <!--        Replace header-->
+        <template id="replace_header" inherit_id="portal.frontend_layout" name="Header">
+            <xpath expr="//nav[@class='navbar navbar-expand-md navbar-light bg-light']" position="replace">
+                 <div class="jp_top_header_main_wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="jp_top_header_left_wrapper">
+                                        <div class="jp_top_header_left_cont">
+                                            <p>&#160;Phone &#160;+123456789</p>
+                                            <p class="">&#160;Email :&#160;<a href=
+                                                                                      "#">Email@example.com
+                                            </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="jp_top_header_right_wrapper">
+                                        <div class="jp_top_header_right_cont">
+                                            <ul>
+                                                <li>
+                                                    <a href="register.html">&#160; SIGN UP</a>
+                                                </li>
+                                                <li>
+                                                    <a href="login.html">&#160; LOGIN</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp_top_header_right__social_cont">
+                                            <ul>
+                                                <li>
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="jp_top_header_img_wrapper">
+                    <div class="gc_main_menu_wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class=
+                                             "col-lg-2 col-md-2 col-sm-12 col-xs-12 hidden-xs hidden-sm full_width">
+                                    <div class="gc_header_wrapper">
+                                        <div class="gc_logo">
+                                            <a href="index.html">
+                                                <img src=
+                                                             "/website_hr_recruitment/static/src/images/header/logo2.png"
+                                                     alt="Logo" title="Job Pro"
+                                                     class=
+                                                             "img-responsive"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 full_width">
+                                    <div class="header-area hidden-menu-bar stick" id="sticker">
+                                        <!-- mainmenu start -->
+                                        <div class="mainmenu">
+                                            <div class="gc_right_menu">
+                                                <ul>
+                                                    <li id="search_button">
+                                                    </li>
+                                                    <li>
+                                                        <div id="search_open" class="gc_search_box">
+                                                            <input type="text"
+                                                                   placeholder="Search here"/>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <ul class="float_left">
+                                                <li class="has-mega gc_main_navigation">
+                                                    <a href="/" class=
+                                                            "gc_main_navigation">Trang chủ&#160;
+                                                    </a> <!-- mega menu start -->
+                                                </li>
+                                                <li class="has-mega gc_main_navigation">
+                                                    <a href="/jobs" class=
+                                                            "gc_main_navigation">Việc làm&#160;
+                                                    </a> <!-- mega menu start -->
+                                                </li>
+                                                <li class="has-mega gc_main_navigation">
+                                                    <a href="/blog" class=
+                                                            "gc_main_navigation">Bài viết&#160;
+                                                    </a> <!-- mega menu start -->
+                                                </li>
+                                                <li class="gc_main_navigation parent">
+                                                    <a href="/contactus" class=
+                                                            "gc_main_navigation">Liên hệ
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- mainmenu end -->
+                                        <!-- mobile menu area start -->
+                                        <header class="mobail_menu">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-6 col-sm-6">
+                                                        <div class="gc_logo">
+                                                            <a href="index.html">
+                                                                <img src=
+                                                                             "images/header/logo2.png" alt="Logo"
+                                                                     title=
+                                                                             "Grace Church"/>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-6">
+                                                        <div class="cd-dropdown-wrapper">
+                                                            <a class="house_toggle" href=
+                                                                    "#0">
+                                                            </a>
+                                                            <nav class="cd-dropdown">
+                                                                <h2>
+                                                                    <a href="#">Job
+                                                                        <span>Pro</span>
+                                                                    </a>
+                                                                </h2>
+                                                                <a href="#0" class="cd-close">Đóng</a>
+                                                                <ul class="cd-dropdown-content">
+                                                                    <li>
+                                                                        <form class="cd-search">
+                                                                            <input type="search" placeholder=
+                                                                                    "Tìm..."/>
+                                                                        </form>
+                                                                    </li>
+                                                                    <li class="has-children">
+                                                                        <a href="/">Trang chủ</a>
+                                                                    </li>
+                                                                    <!-- .has-children -->
+                                                                    <li class="has-children">
+                                                                        <a href="#">Việc làm</a>
+                                                                        <!-- .cd-secondary-dropdown -->
+                                                                    </li>
+                                                                    <!-- .has-children -->
+                                                                    <li class="has-children">
+                                                                        <a href="#">Bài viết</a>
+                                                                        <!-- .cd-secondary-dropdown -->
+                                                                    </li>
+                                                                    <!-- .has-children -->
+                                                                    <li>
+                                                                        <a href="/contactus">Liên hệ</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="/signin">Đăng kí</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="/login">Đăng nhập</a>
+                                                                    </li>
+                                                                </ul>
+                                                                <!-- .cd-dropdown-content -->
+                                                            </nav>
+                                                            <!-- .cd-dropdown -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .cd-dropdown-wrapper -->
+                                        </header>
+                                    </div>
+                                </div>
+                                <!-- mobile menu area end -->
+                                <div class=
+                                             "col-lg-2 col-md-2 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+                                    <div class="jp_navi_right_btn_wrapper">
+                                        <ul>
+                                            <li>
+                                                <a href="add_postin.html">&#160; Thêm công việc</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+        <!--        end repalce header-->
+
+        <!--        Replace footer-->
+        <template id="replace_footer" inherit_id="website.footer_custom" name="Footer">
+            <xpath expr="//div[@id='footer']" position="replace">
+                <div class="jp_main_footer_img_wrapper">
+                    <div class="jp_newsletter_img_overlay_wrapper"></div>
+                    <!-- jp Newsletter Wrapper End -->
+                    <!-- jp footer Wrapper Start -->
+                    <div class="jp_footer_main_wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="jp_footer_logo_wrapper">
+                                        <div class="jp_footer_logo">
+                                            <a href="#">
+                                                <img src=
+                                                             "/website_hr_recruitment/static/src/images/content/resume_logo.png"
+                                                     alt="footer_logo"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jp_footer_three_sec_main_wrapper">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="jp_footer_first_cont_wrapper">
+                                            <div class="jp_footer_first_cont">
+                                                <h2>Who We Are</h2>
+                                                <p>This is Photoshop's version of Lom Ipsum. Proin gravida nibh vel
+                                                    velit auctor aliquet. Aenean sollicitudin, lorem quis
+                                                    bibendum.
+                                                    <br/>
+                                                    <br/>
+                                                    Proin akshay handge vel velit auctor aliquet. Aenean
+                                                    sollicitudin,
+                                                </p>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">READ MORE</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class=
+                                                     "jp_footer_candidate_wrapper jp_footer_candidate_wrapper2">
+                                            <div class="jp_footer_candidate">
+                                                <h2>For candidate</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Add a Resume</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">candidate Dashboard</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Past Applications</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Job Alerts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Bookmarks</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">My Account</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Your Jobs</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class=
+                                                     "jp_footer_candidate_wrapper jp_footer_candidate_wrapper3">
+                                            <div class="jp_footer_candidate">
+                                                <h2>For Employers</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Browse candidates</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Employer Dashboard</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Add Job</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Job Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Job Packages</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Work Process</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">My Account</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class=
+                                                     "jp_footer_candidate_wrapper jp_footer_candidate_wrapper4">
+                                            <div class="jp_footer_candidate">
+                                                <h2>Information</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">About Us</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Terms &amp; Conditions</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Privacy Policy</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Careers with Us</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Sitemap</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Contact Us</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">FAQs</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="jp_bottom_footer_Wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="jp_bottom_footer_left_cont">
+                                                    <p>© 2019-20 Job Pro. All Rights Reserved.</p>
+                                                </div>
+                                                <div class="jp_bottom_top_scrollbar_wrapper">
+                                                    <a href="javascript:"
+                                                       id="return-to-top"></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="jp_bottom_footer_right_cont">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"></a>
+                                                        </li>
+                                                        <li class="hidden-xs">
+                                                            <a href="#"></a>
+                                                        </li>
+                                                        <li class="hidden-xs">
+                                                            <a href="#"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- jp footer Wrapper End -->
+                <!-- chat box Wrapper start -->
+                <div id="chat-circle" class="btn btn-raised"><i class="fa fa-envelope-o"></i></div>
+                <div class="chat-box">
+                    <div class="chat-box-header">ChatBot</div>
+                    <div class="chat-box-body">
+                        <div class="chat-box-overlay"></div>
+                        <div class="chat-logs"></div>
+                        <!--chat-log -->
+                    </div>
+                    <div class="chat-input">
+                        <form>
+                            <input type="text" id="chat-input" placeholder=
+                                    "Send a message..."/>
+                            <button type="submit" class="chat-submit"
+                                    id="chat-submit"></button>
+                        </form>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+        <!--        end repalce footer-->
+
+        <template id="replace_copyright" inherit_id="web.frontend_layout">
+            <xpath expr="//div[@class='o_footer_copyright']" position="replace">
+            </xpath>
+        </template>
     </data>
 </odoo>
